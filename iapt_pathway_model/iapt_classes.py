@@ -609,7 +609,10 @@ class Model:
         while self.referrals_to_process > 0:
 
             #yield self.env.timeout(0)
-            self.env.process(self.patient_asst_pathway(self.treatment_week_number))
+            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            # SR - I think this needs a yield before the self.env.process? Have added.
+            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            yield self.env.process(self.patient_asst_pathway(self.treatment_week_number))
 
             self.referrals_to_process -= 1
 
@@ -936,6 +939,10 @@ class Model:
         yield self.env.process(self.cbt_staff_generator(week_number))
         yield self.env.process(self.couns_staff_generator(week_number))
 
+        # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        # SR - I think this you may not need this additional timeout
+        # as the child processes above all yield too
+        # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         yield(self.env.timeout(0))
 
     def pwp_staff_generator(self,week_number):
@@ -1237,7 +1244,12 @@ class Model:
                                 print(f"-- Pathway Runner Initiated --")
                             # proceed to next patient and run pathway runner
                             #yield self.env.timeout(0)
-                            self.env.process(self.pathway_runner(p))
+
+
+                            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                            # SR - I think this maybe needs a yield - have added
+                            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                            yield self.env.process(self.pathway_runner(p))
 
                             #return self.asst_results_df
 
@@ -1446,6 +1458,15 @@ class Model:
                 self.step2_results_df['IsStepUp'] = 1
                 if g.debug_level >= 2:
                     print(f'### STEPPED UP ###: Patient {p.id} has been stepped up, running Step3 route selector')
+
+                # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                # SR - Need to check, but I think people may return to step 2 after finishing
+                # Step 3 in this clause, which may not be intended behaviour?
+                # May need to find some way of exiting the rest of the pathway at this point
+                # (or alter the way the governor works so basically they get sent back to the
+                # governor if this condition is triggered, with some flag set, and the governor
+                # then sends them out to the step 3 pathway?)
+                # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 yield self.env.process(self.patient_step3_pathway(p))
             else:
                 self.step2_results_df['IsStepUp'] = 0
@@ -1555,6 +1576,16 @@ class Model:
         # Record how long patient queued for groups
         self.asst_results_df.at[p.id, 'Group Q Time'] = self.q_time_group
 
+
+        # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        # SR - I think may be issue here as no timeout between each session
+        # i.e. the session counter is going up but there is no progression
+        # of simulation time until the end of the sessions when you seem to wait
+        # for all the sessions to progress at once with the code
+        # yield self.env.timeout(self.group_session_counter)
+        # Or is this intentional - sort of pre-determining the number of sessions they
+        # will have, then just wait for that many sessions to pass?
+        # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         while self.group_session_counter < g.step2_group_sessions and self.group_dna_counter < 2:
             if g.debug_level >= 2:
                 print(f'Week {self.env.now+self.group_session_counter}: Patient {p.id} (added week {p.week_added}) on {p.step2_path_route} Session {self.group_session_counter}')
@@ -1611,6 +1642,10 @@ class Model:
         # remove from overall caseload
         g.number_on_group_cl -=1
 
+        # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        # SR: A few lines up you are resetting the group session counter to 0
+        # but then using it to determine the timeout - so counter will always be 0?
+        # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         yield self.env.timeout(self.group_session_counter)
 
     def step3_cbt_process(self,patient):
