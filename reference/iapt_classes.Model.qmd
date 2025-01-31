@@ -1,0 +1,49 @@
+# iapt_classes.Model { #iapt_classes.Model }
+
+```python
+Model(self, run_number)
+```
+
+Test
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [asst_results_df](iapt_classes.Model.asst_results_df.qmd#iapt_classes.Model.asst_results_df) |  |
+| [cbt_staff_counter](iapt_classes.Model.cbt_staff_counter.qmd#iapt_classes.Model.cbt_staff_counter) |  |
+| [couns_staff_counter](iapt_classes.Model.couns_staff_counter.qmd#iapt_classes.Model.couns_staff_counter) |  |
+| [env](iapt_classes.Model.env.qmd#iapt_classes.Model.env) |  |
+| [patient_counter](iapt_classes.Model.patient_counter.qmd#iapt_classes.Model.patient_counter) |  |
+| [pwp_staff_counter](iapt_classes.Model.pwp_staff_counter.qmd#iapt_classes.Model.pwp_staff_counter) |  |
+| [run_number](iapt_classes.Model.run_number.qmd#iapt_classes.Model.run_number) |  |
+| [staff_results_df](iapt_classes.Model.staff_results_df.qmd#iapt_classes.Model.staff_results_df) |  |
+| [step2_results_df](iapt_classes.Model.step2_results_df.qmd#iapt_classes.Model.step2_results_df) |  |
+| [step3_results_df](iapt_classes.Model.step3_results_df.qmd#iapt_classes.Model.step3_results_df) |  |
+
+## Methods
+
+| Name | Description |
+| --- | --- |
+| [calculate_run_results](iapt_classes.Model.calculate_run_results.qmd#iapt_classes.Model.calculate_run_results) |  |
+| [cbt_staff_generator](iapt_classes.Model.cbt_staff_generator.qmd#iapt_classes.Model.cbt_staff_generator) |  |
+| [couns_staff_generator](iapt_classes.Model.couns_staff_generator.qmd#iapt_classes.Model.couns_staff_generator) |  |
+| [find_caseload_slot](iapt_classes.Model.find_caseload_slot.qmd#iapt_classes.Model.find_caseload_slot) |  |
+| [generator_patient_referrals](iapt_classes.Model.generator_patient_referrals.qmd#iapt_classes.Model.generator_patient_referrals) |  |
+| [pathway_runner](iapt_classes.Model.pathway_runner.qmd#iapt_classes.Model.pathway_runner) |  |
+| [patient_asst_pathway](iapt_classes.Model.patient_asst_pathway.qmd#iapt_classes.Model.patient_asst_pathway) |  |
+| [patient_step2_pathway](iapt_classes.Model.patient_step2_pathway.qmd#iapt_classes.Model.patient_step2_pathway) |  |
+| [patient_step3_pathway](iapt_classes.Model.patient_step3_pathway.qmd#iapt_classes.Model.patient_step3_pathway) |  |
+| [patient_treatment_generator](iapt_classes.Model.patient_treatment_generator.qmd#iapt_classes.Model.patient_treatment_generator) |  |
+| [pwp_staff_generator](iapt_classes.Model.pwp_staff_generator.qmd#iapt_classes.Model.pwp_staff_generator) |  |
+| [random_normal](iapt_classes.Model.random_normal.qmd#iapt_classes.Model.random_normal) |  |
+| [replenish_weekly_resources](iapt_classes.Model.replenish_weekly_resources.qmd#iapt_classes.Model.replenish_weekly_resources) |  |
+| [resource_builder](iapt_classes.Model.resource_builder.qmd#iapt_classes.Model.resource_builder) |  |
+| [run](iapt_classes.Model.run.qmd#iapt_classes.Model.run) |  |
+| [staff_entity_generator](iapt_classes.Model.staff_entity_generator.qmd#iapt_classes.Model.staff_entity_generator) |  |
+| [step2_group_process](iapt_classes.Model.step2_group_process.qmd#iapt_classes.Model.step2_group_process) |  |
+| [step2_pwp_process](iapt_classes.Model.step2_pwp_process.qmd#iapt_classes.Model.step2_pwp_process) |  |
+| [step3_cbt_process](iapt_classes.Model.step3_cbt_process.qmd#iapt_classes.Model.step3_cbt_process) |  |
+| [step3_couns_process](iapt_classes.Model.step3_couns_process.qmd#iapt_classes.Model.step3_couns_process) |  |
+| [the_governor](iapt_classes.Model.the_governor.qmd#iapt_classes.Model.the_governor) |  |
+| [weekly_stats](iapt_classes.Model.weekly_stats.qmd#iapt_classes.Model.weekly_stats) |  |

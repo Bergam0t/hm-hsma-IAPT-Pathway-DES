@@ -1,14 +1,17 @@
 project:
   type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
 
 # tell quarto to read the generated sidebar
 metadata-files:
-  - api/_sidebar.yml
+  - _sidebar.yml
 
 # tell quarto to read the generated styles
 # format:
 #   css:
-#     - api/_styles-quartodoc.css
+#     - _styles-quartodoc.css
 
 quartodoc:
   # the name used to import the package you want to create reference docs for
@@ -16,8 +19,8 @@ quartodoc:
   source_dir: iapt_pathway_model
 
   # write sidebar and style data
-  sidebar: api/_sidebar.yml
-  css: api/_styles-quartodoc.css
+  sidebar: _sidebar.yml
+  css: _styles-quartodoc.css
 
 
 

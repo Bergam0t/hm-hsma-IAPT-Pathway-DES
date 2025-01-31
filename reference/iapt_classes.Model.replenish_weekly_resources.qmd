@@ -1,0 +1,6 @@
+# replenish_weekly_resources { #iapt_classes.Model.replenish_weekly_resources }
+
+```python
+Model.replenish_weekly_resources()
+```
+

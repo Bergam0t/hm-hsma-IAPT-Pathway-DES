@@ -1,0 +1,28 @@
+# iapt_classes.Staff { #iapt_classes.Staff }
+
+```python
+Staff(self, s_id)
+```
+
+Represents a staff member in a medical or therapy setting, tracking their weekly activities and availability.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name   | Type   | Description                             | Default    |
+|--------|--------|-----------------------------------------|------------|
+| s_id   | int    | Unique identifier for the staff member. | _required_ |
+
+## Attributes {.doc-section .doc-section-attributes}
+
+| Name              | Type        | Description                                                          |
+|-------------------|-------------|----------------------------------------------------------------------|
+| id                | int         | Unique identifier for the staff member.                              |
+| week_number       | int         | The week number for which staff activity is recorded.                |
+| staff_type        | list of str | The type of staff, e.g., CBT, PwP, or Counsellor.                    |
+| staff_hours_avail | int         | The number of hours per week the staff member is available for work. |
+| staff_band        | int         | The band level of the staff member.                                  |
+| staff_time_wellbg | int         | Time allocated for staff wellbeing.                                  |
+| staff_time_superv | int         | Time allocated for staff supervision.                                |
+| staff_time_breaks | int         | Time allocated for breaks.                                           |
+| staff_time_huddle | int         | Time allocated for counsellor huddle meetings.                       |
+| staff_time_cpd    | int         | Time allocated for continuing professional development (CPD).        |

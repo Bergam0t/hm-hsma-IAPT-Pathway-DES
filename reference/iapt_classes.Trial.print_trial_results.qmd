@@ -1,0 +1,6 @@
+# print_trial_results { #iapt_classes.Trial.print_trial_results }
+
+```python
+Trial.print_trial_results()
+```
+

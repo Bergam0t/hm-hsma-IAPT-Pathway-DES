@@ -1,0 +1,6 @@
+# step3_couns_process { #iapt_classes.Model.step3_couns_process }
+
+```python
+Model.step3_couns_process(patient)
+```
+

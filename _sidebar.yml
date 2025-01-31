@@ -1,0 +1,19 @@
+website:
+  sidebar:
+  - contents:
+    - reference/index.qmd
+    - contents:
+      - reference/iapt_classes.g.qmd
+      section: Set Up Options
+    - contents:
+      - reference/iapt_classes.Staff.qmd
+      - reference/iapt_classes.Patient.qmd
+      section: Entities
+    - contents:
+      - reference/iapt_classes.Model.qmd
+      section: IAPT Pathway Model
+    - contents:
+      - reference/iapt_classes.Trial.qmd
+      section: Trial Creation
+    id: reference
+  - id: dummy-sidebar

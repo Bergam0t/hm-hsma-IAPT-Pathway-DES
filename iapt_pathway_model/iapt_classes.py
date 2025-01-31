@@ -5,6 +5,131 @@ import pandas as pd
 import math
 
 class g:
+    """
+    A global configuration class for managing referral, assessment, treatment, and staffing parameters
+    in a healthcare simulation environment.
+
+    Attributes
+    ----------
+    debug_level : int
+        Debugging level for testing (default: 2).
+    mean_referrals_pw : int
+        Mean number of referrals per week.
+    referral_rej_rate : float
+        Proportion of referrals that are rejected at screening.
+    referral_review_rate : float
+        Proportion of referrals that require MDT review.
+    mdt_freq : int
+        Frequency (in weeks) at which MDT reviews occur.
+    review_rej_rate : float
+        Proportion of referrals that are rejected at MDT review.
+    base_waiting_list : int
+        Initial number of patients on the waiting list.
+    referral_screen_time : int
+        Average time in minutes required to screen one referral.
+    opt_in_wait : int
+        Number of weeks patients have to opt in.
+    opt_in_qtime : int
+        Maximum waiting period in weeks for telephone assessment.
+    opt_in_rate : float
+        Proportion of referrals that opt in.
+    asst_6_weeks : float
+        Proportion of referrals assessed within 6 weeks.
+    ta_time_mins : int
+        Time allocated per TA session in minutes.
+    ta_accept_rate : float
+        Proportion of TAs that are accepted.
+    step2_ratio : float
+        Proportion of patients assigned to Step 2 vs Step 3.
+    step2_routes : list
+        Available Step 2 treatment routes (e.g., 'PwP', 'Group').
+    step2_path_ratios : list
+        Distribution of patients across Step 2 treatment routes.
+    step2_pwp_sessions : int
+        Number of PwP sessions for Step 2 patients.
+    step2_pwp_dna_rate : float
+        DNA (Did Not Attend) rate for PwP sessions.
+    step2_pwp_1st_mins : int
+        Duration of the first PwP session in minutes.
+    step2_pwp_fup_mins : int
+        Duration of follow-up PwP sessions in minutes.
+    step2_session_admin : int
+        Time allocated for administrative tasks per session in minutes.
+    step2_pwp_period : int
+        Maximum number of weeks over which PwP sessions are delivered.
+    step2_group_sessions : int
+        Number of group therapy sessions.
+    step2_group_size : int
+        Minimum group size required before a session can be run.
+    step2_group_session_mins : int
+        Duration of a group therapy session in minutes.
+    step2_group_dna_rate : float
+        DNA rate for group therapy sessions.
+    step3_ratio : float
+        Proportion of patients assigned to Step 3 vs Step 2.
+    step3_routes : list
+        Available Step 3 treatment routes.
+    step3_path_ratios : list
+        Distribution of patients across Step 3 treatment routes.
+    step3_cbt_sessions : int
+        Number of CBT sessions for Step 3 patients.
+    step3_cbt_1st_mins : int
+        Duration of the first CBT session in minutes.
+    step3_cbt_fup_mins : int
+        Duration of follow-up CBT sessions in minutes.
+    step3_cbt_dna_rate : float
+        DNA rate for CBT sessions.
+    step3_session_admin : int
+        Time allocated for administrative tasks per session in minutes.
+    step3_cbt_period : int
+        Maximum number of weeks over which CBT sessions are delivered.
+    step3_couns_sessions : int
+        Number of counselling sessions for Step 3 patients.
+    step3_couns_1st_mins : int
+        Duration of the first counselling session in minutes.
+    step3_couns_fup_mins : int
+        Duration of follow-up counselling sessions in minutes.
+    step3_couns_dna_rate : float
+        DNA rate for counselling sessions.
+    step3_couns_period : int
+        Maximum number of weeks over which counselling sessions are delivered.
+    supervision_time : int
+        Monthly supervision time in minutes per modality.
+    break_time : int
+        Weekly break time in minutes.
+    wellbeing_time : int
+        Monthly wellbeing time allocation in minutes.
+    counsellors_huddle : int
+        Weekly or fortnightly huddle time for counsellors.
+    cpd_time : int
+        Monthly continuing professional development (CPD) time in minutes.
+    number_staff_cbt : int
+        Number of CBT therapists available.
+    number_staff_couns : int
+        Number of counsellors available.
+    number_staff_pwp : int
+        Number of PwP therapists available.
+    hours_avail_cbt : float
+        Weekly available hours for CBT therapists.
+    hours_avail_couns : float
+        Weekly available hours for counsellors.
+    hours_avail_pwp : float
+        Weekly available hours for PwP therapists.
+    sim_duration : int
+        Total duration of the simulation in weeks.
+    number_of_runs : int
+        Number of simulation runs.
+    std_dev : int
+        Standard deviation for randomizing activity times.
+    event_week_tracker : dict
+        Dictionary to track the latest event week for each patient.
+    referral_rate_lookup : DataFrame
+        Past referral data loaded from CSV.
+    weekly_wl_posn : DataFrame
+        Weekly waiting list position statistics.
+    caseload_weekly_stats : list
+        List to store weekly caseload statistics.
+    """
 
     # used for testing
     debug_level = 2

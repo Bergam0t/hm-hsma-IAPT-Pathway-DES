@@ -1,0 +1,4 @@
+# asst_weekly_dfs { #iapt_classes.Trial.asst_weekly_dfs }
+
+`Trial.asst_weekly_dfs`
+

@@ -1,0 +1,24 @@
+# iapt_classes.Trial { #iapt_classes.Trial }
+
+```python
+Trial(self)
+```
+
+
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [asst_weekly_dfs](iapt_classes.Trial.asst_weekly_dfs.qmd#iapt_classes.Trial.asst_weekly_dfs) |  |
+| [df_trial_results](iapt_classes.Trial.df_trial_results.qmd#iapt_classes.Trial.df_trial_results) |  |
+| [staff_weekly_dfs](iapt_classes.Trial.staff_weekly_dfs.qmd#iapt_classes.Trial.staff_weekly_dfs) |  |
+| [step2_weekly_dfs](iapt_classes.Trial.step2_weekly_dfs.qmd#iapt_classes.Trial.step2_weekly_dfs) |  |
+| [step3_weekly_dfs](iapt_classes.Trial.step3_weekly_dfs.qmd#iapt_classes.Trial.step3_weekly_dfs) |  |
+
+## Methods
+
+| Name | Description |
+| --- | --- |
+| [print_trial_results](iapt_classes.Trial.print_trial_results.qmd#iapt_classes.Trial.print_trial_results) |  |
+| [run_trial](iapt_classes.Trial.run_trial.qmd#iapt_classes.Trial.run_trial) |  |

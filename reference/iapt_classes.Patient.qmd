@@ -1,0 +1,46 @@
+# iapt_classes.Patient { #iapt_classes.Patient }
+
+```python
+Patient(self, p_id)
+```
+
+Represents a patient in a medical system, tracking their referral, treatment steps, and status.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name   | Type   | Description                        | Default    |
+|--------|--------|------------------------------------|------------|
+| p_id   | int    | Unique identifier for the patient. | _required_ |
+
+## Attributes {.doc-section .doc-section-attributes}
+
+| Name                 | Type        | Description                                                                      |
+|----------------------|-------------|----------------------------------------------------------------------------------|
+| id                   | int         | Unique identifier for the patient.                                               |
+| patient_at_risk      | int         | Flag to determine the DNA/Cancellation policy to apply.                          |
+| week_added           | int or None | The week the patient was added to the waiting list (used for debugging).         |
+| referral_rejected    | int         | Indicates whether the referral was rejected (1) or not (0).                      |
+| referral_time_screen | int         | Time taken to screen the referral.                                               |
+| referral_req_review  | int         | Indicates if the referral requires an MDT review (1 for yes, 0 for no).          |
+| time_to_mdt          | int         | Time taken to MDT, with a maximum of 2 weeks.                                    |
+| opted_in             | int         | Indicates whether the patient opted in (1) or not (0).                           |
+| opt_in_wait          | int         | Duration (in weeks) used within the 1-week opt-in window.                        |
+| opt_in_qtime         | int         | Duration (in weeks) used within the 4-week TA appointment window.                |
+| attended_ta          | int         | Indicates whether the patient attended the TA appointment (1 for yes, 0 for no). |
+| initial_step         | list of str | The initial treatment step the patient was assigned to (Step 2 or Step 3).       |
+| step2_resource_id    | list of int | Identifiers for the staff members allocated to Step 2 treatment.                 |
+| step2_path_route     | list of str | The specific path taken within Step 2.                                           |
+| step2_place_on_wl    | int         | Position on the Step 2 waiting list.                                             |
+| step2_start_week     | int         | The week number when Step 2 treatment started.                                   |
+| step2_session_count  | int         | Number of sessions attended in Step 2.                                           |
+| step2_drop_out       | int         | Indicates whether the patient dropped out during Step 2 (1 for yes, 0 for no).   |
+| step2_week_number    | int         | Current week number of Step 2 treatment.                                         |
+| step2_end_week       | int         | The week number when Step 2 treatment was completed.                             |
+| step3_resource_id    | list of int | Identifiers for the staff members allocated to Step 3 treatment.                 |
+| step3_path_route     | list of str | The specific path taken within Step 3.                                           |
+| step3_place_on_wl    | int         | Position on the Step 3 waiting list.                                             |
+| step3_start_week     | int         | The week number when Step 3 treatment started.                                   |
+| step3_session_count  | int         | Number of sessions attended in Step 3.                                           |
+| step3_drop_out       | int         | Indicates whether the patient dropped out during Step 3 (1 for yes, 0 for no).   |
+| step3_week_number    | int         | Current week number of Step 3 treatment.                                         |
+| step3_end_week       | int         | The week number when Step 3 treatment was completed.                             |

@@ -1,0 +1,34 @@
+# Function reference {.doc .doc-index}
+
+## Set Up Options
+
+Class controlling model-level parameters
+
+| | |
+| --- | --- |
+| [iapt_classes.g](iapt_classes.g.qmd#iapt_classes.g) | A global configuration class for managing referral, assessment, treatment, and staffing parameters |
+
+## Entities
+
+Entity-level
+
+| | |
+| --- | --- |
+| [iapt_classes.Staff](iapt_classes.Staff.qmd#iapt_classes.Staff) | Represents a staff member in a medical or therapy setting, tracking their weekly activities and availability. |
+| [iapt_classes.Patient](iapt_classes.Patient.qmd#iapt_classes.Patient) | Represents a patient in a medical system, tracking their referral, treatment steps, and status. |
+
+## IAPT Pathway Model
+
+Class and methods controlling the flow of patients through the system
+
+| | |
+| --- | --- |
+| [iapt_classes.Model](iapt_classes.Model.qmd#iapt_classes.Model) | Test |
+
+## Trial Creation
+
+Class and methods to run and analyse a trial consisting of multiple model runs
+
+| | |
+| --- | --- |
+| [iapt_classes.Trial](iapt_classes.Trial.qmd#iapt_classes.Trial) |  |

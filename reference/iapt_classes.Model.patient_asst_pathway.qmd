@@ -1,0 +1,6 @@
+# patient_asst_pathway { #iapt_classes.Model.patient_asst_pathway }
+
+```python
+Model.patient_asst_pathway(asst_week_number)
+```
+

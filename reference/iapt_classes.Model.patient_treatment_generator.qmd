@@ -1,0 +1,6 @@
+# patient_treatment_generator { #iapt_classes.Model.patient_treatment_generator }
+
+```python
+Model.patient_treatment_generator(number_of_referrals, treatment_week_number)
+```
+

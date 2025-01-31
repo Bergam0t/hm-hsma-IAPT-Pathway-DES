@@ -1,0 +1,4 @@
+# patient_counter { #iapt_classes.Model.patient_counter }
+
+`Model.patient_counter`
+
