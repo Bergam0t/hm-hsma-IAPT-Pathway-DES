@@ -1,0 +1,256 @@
+<mxfile host="65bd71144e">
+    <diagram id="9xjQ_89IGLx1mPrtWmgW" name="Page-1">
+        <mxGraphModel dx="985" dy="1155" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="49" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#80FF00;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+                    <mxGeometry x="452.5" y="17" width="155" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#80FF00;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+                    <mxGeometry x="242.5" y="17" width="155" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#80FF00;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="20" width="120" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="g" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="45" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Patient" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="30" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Staff" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FFFF00;" edge="1" parent="1" source="21" target="23">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="430" y="60"/>
+                            <mxPoint x="430" y="200"/>
+                            <mxPoint x="150" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="Model" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="30" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;" edge="1" parent="1" source="22" target="37">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;" edge="1" parent="1" source="22" target="36">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Trial" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="23" target="44">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="23" target="43">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="23" target="76">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="23" target="77">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="23" target="80">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="23" target="32">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="the_governor" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="237.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="For each week in sim" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="300" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <UserObject label="generator_patient_referrals" tooltip="generator function that represents the DES generator for referrals" id="32">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF66B3;" vertex="1" parent="1">
+                        <mxGeometry x="270" y="340" width="180" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="36" value="print_trial_results" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;strokeColor=#F0F0F0;" vertex="1" parent="1">
+                    <mxGeometry x="650" y="70" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="run_trial" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;strokeColor=#F0F0F0;" vertex="1" parent="1">
+                    <mxGeometry x="650" y="120" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#c21e8e;" edge="1" parent="1" source="43" target="65">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#c21e8e;" edge="1" parent="1" source="43" target="67">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#c21e8e;" edge="1" parent="1" source="43" target="68">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="staff_entity_generator" tooltip="generator for staff to record non-clinical activity" id="43">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF3399;" vertex="1" parent="1">
+                        <mxGeometry x="270" y="552.5" width="170" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="resource_builder" tooltip="this function builds staff resources containing the number of slots on the caseload or the number of weekly appointment slots available" id="44">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#33FFFF;" vertex="1" parent="1">
+                        <mxGeometry x="410" y="215" width="120" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="58" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#c21e8e;" edge="1" parent="1" source="50" target="57">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="pwp_staff_generator" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF3399;" vertex="1" parent="1">
+                    <mxGeometry x="1410" y="482.5" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#c21e8e;" edge="1" parent="1" source="51" target="59">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="cbt_staff_generator" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF3399;" vertex="1" parent="1">
+                    <mxGeometry x="1410" y="522.5" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#c21e8e;" edge="1" parent="1" source="52" target="60">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="couns_staff_generator" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF3399;" vertex="1" parent="1">
+                    <mxGeometry x="1410" y="562.5" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;timeout&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;0&lt;/span&gt;))&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="1648" y="467.5" width="300" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;timeout&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;0&lt;/span&gt;))&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="1648" y="512.5" width="300" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;timeout&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;0&lt;/span&gt;))&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="1648" y="552.5" width="300" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#c21e8e;" edge="1" parent="1" source="65" target="50">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt; &lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;pwp_staff_generator&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;week_number&lt;/span&gt;))&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="430" width="620" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#c21e8e;" edge="1" parent="1" source="67" target="51">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt; &lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;cbt_staff_generator&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;week_number&lt;/span&gt;))&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="512.5" width="620" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#c21e8e;" edge="1" parent="1" source="68" target="52">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt; &lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;couns_staff_generator&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;week_number&lt;/span&gt;))&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="600" width="620" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="At Start" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=20;fontColor=#1EA1C2;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="230" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="76" target="92">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="patient_treatment_generator" tooltip="generator function that represents the DES generator for referrals" id="76">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF66B3;" vertex="1" parent="1">
+                        <mxGeometry x="270" y="760" width="180" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="weekly_stats" tooltip="generator function that represents the DES generator for referrals" id="77">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF66B3;" vertex="1" parent="1">
+                        <mxGeometry x="280" y="950" width="180" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="replenish_weekly_resources" tooltip="generator function that represents the DES generator for referrals" id="80">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF66B3;" vertex="1" parent="1">
+                        <mxGeometry x="280" y="1140" width="180" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="95" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="92" target="94">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;span style=&quot;color: rgb(197, 134, 192);&quot;&gt;(((yield?)))&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;patient_asst_pathway&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;treatment_week_number&lt;/span&gt;))&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="750" width="840" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="94" target="96">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="patient_asst_pathway" tooltip="generator function that represents the DES generator for referrals" id="94">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF66B3;" vertex="1" parent="1">
+                        <mxGeometry x="1430" y="755" width="180" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="99" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="96" target="98">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;span style=&quot;color: rgb(197, 134, 192);&quot;&gt;(((yield?)))&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;pathway_runner&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;p&lt;/span&gt;))&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="1670" y="750" width="410" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="98" target="100">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="98" target="101">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="pathway_runner" tooltip="generator function that represents the DES generator for referrals" id="98">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF66B3;" vertex="1" parent="1">
+                        <mxGeometry x="2220" y="755" width="180" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="106" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="100" target="104">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" value="&lt;div style=&quot;background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div style=&quot;color: rgb(204, 204, 204); line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt; &lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;patient_step2_pathway&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;p&lt;/span&gt;))&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="960" width="480" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="101" target="105">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="&lt;div style=&quot;background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div style=&quot;color: rgb(204, 204, 204); line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204); line-height: 22px;&quot;&gt;&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;self&lt;/span&gt;&lt;span style=&quot;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;env&lt;/span&gt;&lt;span style=&quot;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: rgb(220, 220, 170);&quot;&gt;process&lt;/span&gt;&lt;span style=&quot;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;self&lt;/span&gt;&lt;span style=&quot;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: rgb(220, 220, 170);&quot;&gt;patient_step3_pathway&lt;/span&gt;&lt;span style=&quot;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;p&lt;/span&gt;&lt;span style=&quot;&quot;&gt;))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="2360" y="960" width="480" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="104" target="108">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="2220" y="1130"/>
+                            <mxPoint x="2220" y="1285"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="112" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="104" target="110">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="2220" y="1130"/>
+                            <mxPoint x="2220" y="1395"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <UserObject label="patient_step_2_pathway" tooltip="generator function that represents the DES generator for referrals" id="104">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF66B3;" vertex="1" parent="1">
+                        <mxGeometry x="1980" y="1100" width="180" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="115" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="105" target="113">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F0F0F0;fontSize=20;fontColor=#1EA1C2;" edge="1" parent="1" source="105" target="114">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="patient_step_3_pathway" tooltip="generator function that represents the DES generator for referrals" id="105">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF66B3;" vertex="1" parent="1">
+                        <mxGeometry x="2520" y="1100" width="180" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="108" value="&lt;div style=&quot;background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div style=&quot;color: rgb(204, 204, 204); line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt; &lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;step2_pwp_process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;p&lt;/span&gt;))&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="1690" y="1250" width="480" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="&lt;div style=&quot;background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div style=&quot;color: rgb(204, 204, 204); line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt; &lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;step2_group_process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;p&lt;/span&gt;))&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="1690" y="1360" width="470" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="&lt;div style=&quot;background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div style=&quot;color: rgb(204, 204, 204); line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt; &lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;step3_cbt_process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;p&lt;/span&gt;))&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="2570" y="1250" width="480" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="&lt;div style=&quot;background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div style=&quot;color: rgb(204, 204, 204); line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;div style=&quot;line-height: 22px;&quot;&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;yield&lt;/span&gt; &lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #9cdcfe;&quot;&gt;env&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;self&lt;/span&gt;.&lt;span style=&quot;color: #dcdcaa;&quot;&gt;step3_couns_process&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;p&lt;/span&gt;))&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;dashPattern=8 8;strokeColor=#80FF00;fontSize=20;fontColor=#c21e8e;" vertex="1" parent="1">
+                    <mxGeometry x="2570" y="1340" width="480" height="70" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
