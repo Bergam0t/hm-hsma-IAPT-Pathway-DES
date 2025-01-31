@@ -1,0 +1,8 @@
+quartodoc==0.9.1
+plotly==5.22.0
+streamlit==1.37.0
+simpy==4.0.2
+pandas==2.0.3
+matplotlib==3.8.0
+numpy==1.25.2
+ipykernel
