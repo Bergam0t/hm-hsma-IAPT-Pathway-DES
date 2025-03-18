@@ -3,6 +3,8 @@ from iapt_classes_model import Model
 from iapt_classes_global import g
 
 # Class representing a Trial for our simulation - a batch of simulation runs.
+
+
 class Trial:
     def __init__(self):
         self.df_trial_results = pd.DataFrame()
@@ -38,9 +40,11 @@ class Trial:
             ]
 
             my_model.step2_results_df = pd.DataFrame(my_model.step2_results_df)
-            my_model.step2_sessions_df = pd.DataFrame(my_model.step2_sessions_df)
+            my_model.step2_sessions_df = pd.DataFrame(
+                my_model.step2_sessions_df)
             my_model.step3_results_df = pd.DataFrame(my_model.step3_results_df)
-            my_model.step3_sessions_df = pd.DataFrame(my_model.step3_sessions_df)
+            my_model.step3_sessions_df = pd.DataFrame(
+                my_model.step3_sessions_df)
 
             if run == 0:
                 self.step2_results_df = my_model.step2_results_df.copy()
@@ -48,18 +52,27 @@ class Trial:
                 self.step2_sessions_df = my_model.step2_sessions_df.copy()
                 self.step3_sessions_df = my_model.step3_sessions_df.copy()
             else:
-                self.step2_results_df = pd.concat([self.step2_results_df, my_model.step2_results_df])
-                self.step3_results_df = pd.concat([self.step3_results_df, my_model.step3_results_df])
-                self.step2_sessions_df = pd.concat([self.step2_sessions_df, my_model.step2_sessions_df])
-                self.step3_sessions_df = pd.concat([self.step3_sessions_df, my_model.step3_sessions_df])
+                self.step2_results_df = pd.concat(
+                    [self.step2_results_df, my_model.step2_results_df])
+                self.step3_results_df = pd.concat(
+                    [self.step3_results_df, my_model.step3_results_df])
+                self.step2_sessions_df = pd.concat(
+                    [self.step2_sessions_df, my_model.step2_sessions_df])
+                self.step3_sessions_df = pd.concat(
+                    [self.step3_sessions_df, my_model.step3_sessions_df])
 
-
-            my_model.asst_weekly_stats = pd.DataFrame(my_model.asst_weekly_stats)
-            my_model.step2_weekly_stats = pd.DataFrame(my_model.step2_weekly_stats)
-            my_model.step3_weekly_stats = pd.DataFrame(my_model.step3_weekly_stats)
-            my_model.step2_waiting_stats = pd.DataFrame(my_model.step2_waiting_stats)
-            my_model.step3_waiting_stats = pd.DataFrame(my_model.step3_waiting_stats)
-            my_model.staff_weekly_stats = pd.DataFrame(my_model.staff_weekly_stats)
+            my_model.asst_weekly_stats = pd.DataFrame(
+                my_model.asst_weekly_stats)
+            my_model.step2_weekly_stats = pd.DataFrame(
+                my_model.step2_weekly_stats)
+            my_model.step3_weekly_stats = pd.DataFrame(
+                my_model.step3_weekly_stats)
+            my_model.step2_waiting_stats = pd.DataFrame(
+                my_model.step2_waiting_stats)
+            my_model.step3_waiting_stats = pd.DataFrame(
+                my_model.step3_waiting_stats)
+            my_model.staff_weekly_stats = pd.DataFrame(
+                my_model.staff_weekly_stats)
 
             my_model.asst_weekly_stats['Run'] = run
             my_model.step2_waiting_stats['Run'] = run
@@ -76,11 +89,13 @@ class Trial:
             self.staff_weekly_dfs.append(my_model.staff_weekly_stats)
 
             if run == 0:
-                self.caseload_weekly_dfs = pd.json_normalize(g.caseload_weekly_stats, 'Data', ['Run Number', 'Week Number'])
+                self.caseload_weekly_dfs = pd.json_normalize(
+                    g.caseload_weekly_stats, 'Data', ['Run Number', 'Week Number'])
             else:
                 self.caseload_weekly_dfs = pd.concat([
                     self.caseload_weekly_dfs,
-                    pd.json_normalize(g.caseload_weekly_stats, 'Data', ['Run Number', 'Week Number'])
+                    pd.json_normalize(g.caseload_weekly_stats, 'Data', [
+                                      'Run Number', 'Week Number'])
                 ])
 
         return (
@@ -88,10 +103,15 @@ class Trial:
             self.step2_sessions_df,
             self.step3_results_df,
             self.step3_sessions_df,
-            #self.df_trial_results,
-            pd.concat(self.asst_weekly_dfs) if self.asst_weekly_dfs else pd.DataFrame(),
-            pd.concat(self.step2_waiting_dfs) if self.step2_waiting_dfs else pd.DataFrame(),
-            pd.concat(self.step3_waiting_dfs) if self.step3_waiting_dfs else pd.DataFrame(),
-            pd.concat(self.staff_weekly_dfs) if self.staff_weekly_dfs else pd.DataFrame(),
-            self.caseload_weekly_dfs if hasattr(self, 'caseload_weekly_dfs') else pd.DataFrame()
+            # self.df_trial_results,
+            pd.concat(
+                self.asst_weekly_dfs) if self.asst_weekly_dfs else pd.DataFrame(),
+            pd.concat(
+                self.step2_waiting_dfs) if self.step2_waiting_dfs else pd.DataFrame(),
+            pd.concat(
+                self.step3_waiting_dfs) if self.step3_waiting_dfs else pd.DataFrame(),
+            pd.concat(
+                self.staff_weekly_dfs) if self.staff_weekly_dfs else pd.DataFrame(),
+            self.caseload_weekly_dfs if hasattr(
+                self, 'caseload_weekly_dfs') else pd.DataFrame()
         )
