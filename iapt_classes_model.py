@@ -1,203 +1,11 @@
 import simpy
+import pandas as pd
 import random
 import numpy as np
-import pandas as pd
-import math
-
-class g:
-
-    # used for testing
-    debug_level = 2
-
-    # Referrals
-    mean_referrals_pw = 200
-
-    # Screening
-    referral_rej_rate = 0.3 # % of referrals rejected, advised 30%
-    referral_review_rate = 0.4 # % that go to MDT as prev contact with Trust
-    mdt_freq = 2 # how often in weeks MDT takes place, longest time a review referral may wait for review
-    review_rej_rate = 0.5 # % ref that go to MDT and get rejected
-    base_waiting_list = 2741 # current number of patients on waiting list
-    referral_screen_time = 20 # average time it takes to screen one referral by a pwp
-    opt_in_wait = 1 # no. of weeks patients have to opt in
-    opt_in_qtime = 4 # longest period a patient will wait for tel assessment based on 4 week window for asst slots
-    opt_in_rate = 0.75 # % of referrals that opt-in
-    asst_6_weeks = 0.9 # % of referrals that are assessed within 6 weeks
-
-    # TA
-    ta_time_mins = 60 # time allocated to each TA
-    ta_accept_rate = 0.7 ##### assume 70% of TA's accepted, need to check this #####
-
-    # Step 2
-    step2_ratio = 0.85 # proportion of patients that go onto Step2 vs Step3
-    step2_routes = ['PwP','Group'] # possible Step2 routes
-    step2_path_ratios = [0.8,0.2] #[0.94,0.06] # Step2 proportion for each route
-    step2_pwp_sessions = 6 # number of PwP sessions at Step2
-    step2_pwp_dna_rate = 0.15 # ##### assume 15% DNA rate for PwP
-    step2_pwp_1st_mins = 45 # minutes allocated for 1st pwp session
-    step2_pwp_fup_mins = 30 # minutes allocated for pwp follow-up session
-    step2_session_admin = 15 # number of mins of clinical admin per session
-    step2_pwp_period = 16 # max number of weeks PwP delivered over
-    step2_group_sessions = 7 # number of group sessions
-    step2_group_size = 7 # size a group needs to be before it can be run
-    step2_group_session_mins = 240 # minutes allocated to pwp group session
-    step2_group_dna_rate = 0.216 # Wellbeing Workshop attendance 78.6%
-
-    # Step Moves
-    step2_step3_ratio = [0.85,0.15]
-    step_routes = ['Step2','Step3']
-    step_up_rate = 0.01 # proportion of Step2 that get stepped up = 0.3% but rounded up to 1%
-    step_down_rate = 0.12 # proportion of Step3 that get stepped down = 11.86%
-    
-    # Step 3
-    step3_ratio = 0.15 # proportion of patients that go onto Step3 vs Step2
-    step3_routes =['Couns','CBT'] # full pathway options = ['PfCBT','Group','CBT','EMDR','DepC','DIT','IPT','CDEP']
-    step3_path_ratios = [0.368,0.632]# [0.1,0.25,0.25,0.05,0.05,0.1,0.1,0.1] # Step3 proportion for each route ##### Need to clarify exact split
-    step3_cbt_sessions = 12 # number of PwP sessions at Step2
-    step3_cbt_1st_mins = 45 # minutes allocated for 1st cbt session
-    step3_cbt_fup_mins = 30 # minutes allocated for cbt follow-up session
-    step3_cbt_dna_rate = 0.216 # Wellbeing Workshop attendance 78.6%
-    step3_session_admin = 15 # number of mins of clinical admin per session
-    step3_cbt_period = 16 # max number of weeks cbt delivered over
-    step3_couns_sessions = 8 # number of couns sessions
-    step3_couns_1st_mins = 45 # minutes allocated for 1st couns session
-    step3_couns_fup_mins = 30 # minutes allocated for couns follow-up session
-    step3_couns_dna_rate = 0.216 # Wellbeing Workshop attendance 78.6%
-    step3_couns_period = 16 # max number of weeks couns delivered over
-    step_3_session_var = 0.15 # % of instances where number sessions goes over standard amount
-
-    # Staff
-    supervision_time = 120 # 2 hours per month per modality ##### could use modulus for every 4th week
-    break_time = 100 # 20 mins per day
-    wellbeing_time = 120 # 2 hours allocated per month
-    counsellors_huddle = 30 # 30 mins p/w or 1 hr per fortnight
-    cpd_time = 225 # half day per month CPD
-    
-    # Job Plans
-    number_staff_cbt = 14 #138
-    number_staff_couns = 4 #40
-    number_staff_pwp = 12 #125
-    hours_avail_cbt = 22.0
-    hours_avail_couns = 22.0
-    hours_avail_pwp = 21.0
-    ta_resource = number_staff_pwp * 3 # job plan = 3 TA per week per PwP
-    pwp_resource = number_staff_pwp # starting point for PwP resources
-    pwp_caseload = 30
-    pwp_id = 0 # unique ID for PwP resources
-    pwp_avail = number_staff_pwp # used to check whether a PwP is available
-    group_resource = number_staff_pwp #  job plan = 1 group per week per PwP, assume 12 per group
-    cbt_resource = number_staff_cbt # job plan = 2 x 1st + 20 X FUP per cbt per week
-    cbt_caseload = 25
-    cbt_id = 0 # unique ID for CBT resources
-    cbt_avail = number_staff_cbt # used to check whether a PwP caseload slot is available
-    couns_resource = number_staff_couns # job plan = 2 x 1st + 20 X FUP per cbt per week
-    couns_caseload = 25
-    couns_id = 0 # unique ID for Couns resources
-    couns_avail = number_staff_couns # used to check whether a Couns is available
-    dna_policy = 2 # number of DNA's allowed before discharged
-    dna_policy_var = 0.05 # % of cases where the DNA policy is varied
-
-    # Simulation
-    sim_duration = 52
-    number_of_runs = 2
-    std_dev = 3 # used for randomising activity times
-    event_week_tracker = {} # used to track the latest events week for each patient
-
-    # Result storage
-    weekly_wl_posn = pd.DataFrame() # container to hold w/l position at end of week
-    caseload_weekly_stats = [] # list to hold weekly Caseload statistics
-    number_on_ta_wl = 0 # used to keep track of TA WL position
-    number_on_pwp_wl = 0 # used to keep track of PwP WL position
-    number_on_group_wl = 0 # used to keep track of groups WL position
-    number_on_cbt_wl = 0 # used to keep track of CBT WL position
-    number_on_couns_wl = 0 # used to keep track of Couns WL position
-
-    # Caseload
-    number_on_pwp_cl = 0 # used to keep track of PwP caseload
-    number_on_group_cl = 0 # used to keep track of groups caseload
-    number_on_cbt_cl = 0 # used to keep track of CBT caseload
-    number_on_couns_cl = 0 # used to keep track of Couns caseload
-
-    # bring in past referral data
-    
-    # referral_rate_lookup = pd.read_csv('talking_therapies_referral_rates.csv'
-    #                                                            ,index_col=0)
-    #print(referral_rate_lookup)
-# function to vary the number of sessions
-def vary_number_sessions(lower, upper, lambda_val=0.1):
-        
-        while True:
-            # Generate a random number from the exponential distribution
-            random_value = np.random.exponential(1 / lambda_val)
-
-            # Shift the distribution to start at 'lower'
-            sessions = random_value + lower #added lower to the random value.
-
-            # Check if the generated value is within the desired range
-            if lower <= sessions <= upper:
-                # Convert to integer and return
-                return int(sessions)
-
-# Patient to capture flow of patient through pathway
-class Patient:
-    def __init__(self, p_id):
-        # Patient
-        self.id = p_id
-        self.patient_at_risk = 0 # used to determine DNA/Canx policy to apply
-
-        self.week_added = None # Week they were added to the waiting list (for debugging purposes)
-
-        # Referral
-        self.referral_rejected = 0 # were they rejected at referral
-        self.referral_time_screen = 0 # time taken to screen referral
-        self.referral_req_review = 0 # does the ref need to go to MDT review
-        self.referral_review_rej = 0
-        self.time_to_mdt = 0 # how long to MDT, max 2 weeks
-        self.opted_in = 0 # did the patient opt in or not
-        self.opt_in_wait = 0 # how much of 1 week opt-in window was used
-        self.opt_in_qtime = 0 # how much of 4 week TA app window was used
-        self.attended_ta = 0 # did the patient attend TA appointment
-
-        self.initial_step = [] # string, whether they were step 2 or step 3
-
-        # Step2
-        self.step2_resource_id = [] # identifier for the staff member allocated to their treatment
-        self.step2_path_route = [] # string, which Step2 path they took
-        self.step2_place_on_wl = 0 # position they are on Step2 waiting list
-        self.step2_wait_week = 0 # week they started waiting to enter treatment
-        self.step2_start_week = 0 # the week number they started treatment
-        self.step2_session_count = 0 # counter for no. of sessions have had
-        self.step2_drop_out = 0 # did they drop out during Step2
-        self.step2_week_number = 0 # counter for which week number they are on
-        self.step2_end_week = 0 # the week number when they completed treatment
-
-        # Step3
-        self.step3_resource_id = [] # identifier for the staff member allocated to their treatment
-        self.step3_path_route = [] # string, which Step2 path they took
-        self.step3_place_on_wl = 0 # position they are on Step2 waiting list
-        self.step2_wait_week = 0 # week they started waiting to enter treatment
-        self.step3_start_week = 0
-        self.step3_session_count = 0 # counter for no. of sessions have had
-        self.step3_drop_out = 0 # did they drop out during Step2
-        self.step3_week_number = 0 # counter for which week number they are on
-        self.step3_end_week = 0
-
-# Staff class to be run weekly by week runner to record staff non-clinical time
-class Staff:
-    def __init__(self, s_id):
-
-        # Staff attributes
-        self.id = s_id
-        self.week_number = 0 # the week number the staff activity is being recorded for
-        self.staff_type = [] # what type of staff i.e. CBT, PwP, Couns
-        self.staff_hours_avail = 0 # how many hours p/w they work
-        self.staff_band = 0 # what staff band
-
-        self.staff_time_wellbg = 0 # staff time for wellbeing
-        self.staff_time_superv = 0 # staff time for supervision
-        self.staff_time_breaks = 0 # staff time for breaks
-        self.staff_time_huddle = 0 # staff time for counsellor huddle
-        self.staff_time_cpd = 0 # staff time for CPD
+from utils import vary_number_sessions
+from iapt_classes_global import g
+from iapt_classes_patient import Patient
+from iapt_classes_staff import Staff
 
 class Model:
 # Constructor to set up the model for a run. We pass in a run number when
@@ -259,7 +67,7 @@ class Model:
         self.step2_results_df['Run Number'] = [0]
         self.step2_results_df['Route Name'] = ['NA'] # which Step2 pathway the patient was sent down
         self.step2_results_df['Q Time'] = [0.0] # time spent queueing
-        self.step2_results_df['WL Posn'] = [0] # place in queue 
+        self.step2_results_df['WL Posn'] = [0] # place in queue
         self.step2_results_df['IsDropout'] = [0]
         self.step2_results_df['IsStep'] = [0] # was the patent stepped down
 
@@ -271,14 +79,14 @@ class Model:
         self.step2_sessions_df['Session Time'] = [0] # clinical session time in mins
         self.step2_sessions_df['Admin Time'] = [0] # admin session time in mins
         self.step2_sessions_df['IsDNA'] = [0]
-       
+
         # Indexing
         self.step2_results_df.set_index("Patient ID", inplace=True)
         self.step2_sessions_df.set_index("Patient ID", inplace=True)
 
         # Step3
         # Create DataFrames that will store Step3 results against the patient ID
-        
+
         self.step3_waiting_list = pd.DataFrame()
         self.step3_waiting_list['Patient ID'] = [1]
         self.step3_waiting_list['Route Name'] = ['NA']
@@ -297,7 +105,7 @@ class Model:
         self.step3_results_df['Run Number'] = [0]
         self.step3_results_df['Route Name'] = ['NA'] # which Step3 pathway the patient was sent down
         self.step3_results_df['WL Posn'] = [0] # place in queue
-        self.step3_results_df['Q Time'] = [0.0] # time spent queueing 
+        self.step3_results_df['Q Time'] = [0.0] # time spent queueing
         self.step3_results_df['IsDropout'] = [0]
         self.step3_results_df['IsStep'] = [0] # was the patent stepped down
 
@@ -341,7 +149,7 @@ class Model:
             activity_time = random.gauss(mean, std_dev)
             if activity_time > 0:
                 return activity_time
-           
+
     # master process to control the running of all the other processes
     def the_governor(self):
 
@@ -353,7 +161,7 @@ class Model:
 
         if g.debug_level >= 2:
                     print(f"Building Sim Resources")
-                   
+
         # build the weekly resources needed to run the model
         yield self.env.process(self.resource_builder())
 
@@ -384,7 +192,7 @@ class Model:
 
                 print(f'''
                 #################################
-                        Week Number {self.week_number} 
+                        Week Number {self.week_number}
                 #################################
                 ''')
 
@@ -395,13 +203,13 @@ class Model:
 
             if g.debug_level >= 2:
                     print(f"Topping Up Caseloads")
-            
+
             # top up the caseload resources ready for next run
             yield self.env.process(self.top_up_caseloads(self.week_number))
-            
+
             if g.debug_level >= 2:
                     print(f"Firing up the staff entity generator")
-            
+
             # start up the staff entity generator
             yield self.env.process(self.staff_entity_generator(self.week_number))
 
@@ -412,7 +220,7 @@ class Model:
                     print(f"Firing up the referral generator")
             # start up the referral generator
             yield self.env.process(self.generator_patient_referrals(self.week_number))
-            
+
             if g.debug_level >= 2:
                     print(f"Referral generator has returned {self.referrals_this_week} referrals")
 
@@ -424,14 +232,14 @@ class Model:
 
             if g.debug_level >= 2:
                     print(f"Collecting Weekly Stats")
-            
+
             # collect the weekly stats ready for the next week to run
             yield self.env.process(self.weekly_stats(self.week_number))
 
             if g.debug_level >= 2:
                     print(f"Weekly Stats have been collected")
 
-        
+
             # increment the week number by one now everything has been run for this week
             self.week_number += 1
 
@@ -454,20 +262,20 @@ class Model:
 
             if g.debug_level >=2:
                 print(f'Processing referral, {self.referrals_to_process} left out of {number_of_referrals}')
-            yield self.env.timeout(0) 
+            yield self.env.timeout(0)
             self.env.process(self.screen_referral(self.treatment_week_number))
-            
+
             self.referrals_to_process -= 1
-            
+
             if g.debug_level >=2:
                 print(f'Referral processed, proceeding to next referral, {self.referrals_to_process} left')
 
         # wait 1 unit of time i.e. 1 week
-        #yield self.env.timeout(1)       
+        #yield self.env.timeout(1)
 
     # process to capture all the results we need at the end of each week
     def weekly_stats(self,stats_week_number):
-          
+
             self.stats_week_number = stats_week_number
 
             ##### record all weekly results #####
@@ -504,28 +312,28 @@ class Model:
                  'TA Mins':self.asst_time_total
                 }
                 )
-            
-            
-            
+
+
+
             ## Staff
             self.job_role_list = ['PwP','CBT','Couns']
             # create summary stats for each of the job roles
             for i, job_role in enumerate(self.job_role_list):
                 # filter data for appropriate role
                 self.staff_results_df_filtered = self.staff_results_df[
-                (self.staff_results_df["Job Role"] == job_role) & 
+                (self.staff_results_df["Job Role"] == job_role) &
                 (self.staff_results_df["Week Number"] == self.stats_week_number)
                 ]
 
-            
+
                 self.job_role_name = job_role
-                
+
                 self.staff_tot_superv = self.staff_results_df_filtered['Supervision Mins'].sum()
                 self.staff_tot_break = self.staff_results_df_filtered['Break Mins'].sum()
                 self.staff_tot_wellb = self.staff_results_df_filtered['Wellbeing Mins'].sum()
                 self.staff_tot_huddle = self.staff_results_df_filtered['Huddle Mins'].sum()
                 self.staff_tot_cpd = self.staff_results_df_filtered['CPD Mins'].sum()
- 
+
                 # weekly staff non-clinical activity
                 self.staff_weekly_stats.append(
                     {'Run Number':self.run_number,
@@ -538,47 +346,47 @@ class Model:
                     'CPD Mins':self.staff_tot_cpd
                     }
                     )
-                
+
             ##### Take a snapshot of the weekly caseload levels #####
-            
+
             self.weekly_pwp_snapshot = {'Run Number':self.run_number
                                        ,'Week Number':self.stats_week_number
                                        ,'Data':[]}
-            
+
             for pwp_caseload_id, pwp_level in self.pwp_resources.items():
                 self.weekly_pwp_snapshot['Data'].append({
                                             'Caseload ID':pwp_caseload_id
                                             ,'Caseload Level':pwp_level.level})
-            
+
             g.caseload_weekly_stats.append(self.weekly_pwp_snapshot)
-                
+
             self.weekly_cbt_snapshot = {'Run Number':self.run_number
                                        ,'Week Number':self.stats_week_number
                                        ,'Data':[]}
-            
+
             for cbt_caseload_id, cbt_level in self.cbt_resources.items():
                 self.weekly_cbt_snapshot['Data'].append({
                                             'Caseload ID':cbt_caseload_id
                                             ,'Caseload Level':cbt_level.level})
-            
+
             g.caseload_weekly_stats.append(self.weekly_cbt_snapshot)
-            
+
             self.weekly_couns_snapshot = {'Run Number':self.run_number
                                        ,'Week Number':self.stats_week_number
                                        ,'Data':[]}
-            
+
             for couns_caseload_id, couns_level in self.couns_resources.items():
                 self.weekly_couns_snapshot['Data'].append({
                                             'Caseload ID':couns_caseload_id
                                             ,'Caseload Level':couns_level.level})
-                
+
             g.caseload_weekly_stats.append(self.weekly_couns_snapshot)
 
             # record weekly waiting list stats
             ##### Step 2 #####
             self.step2_weekly_waiting_stats = self.step2_waiting_list[self.step2_waiting_list['IsWaiting'] == 1].copy()
             self.step2_weekly_waiting_stats['Weeks Waited'] = self.stats_week_number - self.step2_weekly_waiting_stats['Start Week']
-            
+
             self.waiting_list_path = ['PwP','Group']
             # create summary stats for each of the routes
             for y, pathway in enumerate(self.waiting_list_path):
@@ -596,12 +404,12 @@ class Model:
                     'Avg Wait':self.step2_waiting_time
                     }
                     )
-                
-                ##### Step 3 ##### 
+
+                ##### Step 3 #####
                 # record weekly waiting list stats
             self.step3_weekly_waiting_stats = self.step3_waiting_list[self.step3_waiting_list['IsWaiting'] == 1].copy()
             self.step3_weekly_waiting_stats['Weeks Waited'] = self.stats_week_number - self.step2_weekly_waiting_stats['Start Week']
-            
+
             self.waiting_list_path = ['CBT','Couns']
             # create summary stats for each of the routes
             for z, pathway in enumerate(self.waiting_list_path):
@@ -619,7 +427,7 @@ class Model:
                     'Avg Wait':self.step3_waiting_time
                     }
                     )
-            
+
             # hand control back to the governor function
             yield self.env.timeout(0)
 
@@ -638,9 +446,9 @@ class Model:
         if g.debug_level >= 1:
             print(f'Week {self.week_number}: {self.referrals_this_week}'
                                                     ' referrals generated')
-        
-        yield self.env.timeout(0)   
-    
+
+        yield self.env.timeout(0)
+
     # this function builds staff resources containing the number of slots on the caseload
     # or the number of weekly appointment slots available
     def resource_builder(self):
@@ -657,7 +465,7 @@ class Model:
             capacity=g.group_resource,
             init=g.group_resource
             )
-        
+
         yield(self.env.timeout(0))
 
     def caseload_builder(self):
@@ -673,7 +481,7 @@ class Model:
 
         # dictionary to keep track of resources to be restored
         self.pwp_restore = {f'{self.p_type}_{p}':{} for p in range(g.number_staff_pwp)}
-        
+
         if g.debug_level >= 2:
             print(self.pwp_restore)
         ##### CBT #####
@@ -682,10 +490,10 @@ class Model:
         self.cbt_resources = {f'{self.c_type}_{c}':simpy.Container(self.env,
                     capacity=g.cbt_caseload,
                     init=g.cbt_caseload) for c in range(g.number_staff_cbt)}
-        
+
         # dictionary to keep track of resources to be restored
         self.cbt_restore = {f'{self.c_type}_{c}':{} for c in range(g.number_staff_cbt)}
-        
+
         if g.debug_level >= 2:
             print(self.cbt_restore)
         ##### Couns #####
@@ -700,13 +508,13 @@ class Model:
 
         if g.debug_level >= 2:
             print(self.couns_restore)
-        
+
         yield self.env.timeout(0)
 
     def record_caseload_use(self,r_type,r_id,week_number):
-        
+
         self.restore_week = week_number
-        
+
         # Load in the correct resource use dictionary
         if r_type == 'PwP':
             self.resources_used = self.pwp_restore
@@ -714,12 +522,12 @@ class Model:
             self.resources_used = self.cbt_restore
         elif r_type == 'Couns':
             self.resources_used = self.couns_restore
-        
+
         # if g.debug_level >= 2:
         #     print(f'resource used level was:{self.resources_used[r_id]}')
-        
+
         if r_id not in self.resources_used:
-            
+
             if g.debug_level >= 2:
                 print(f"Error: {r_id} not found in {r_type} resources.")
             return
@@ -766,7 +574,7 @@ class Model:
             yield self.env.timeout(0)
 
     def top_up_caseloads(self,week_number):
-            
+
              ##### Caseload Resources #####
             self.week_num = week_number
 
@@ -780,7 +588,7 @@ class Model:
 
                 if g.debug_level >= 2:
                     print(f"PwP Resource {self.pwp_restore_id} now at: {self.pwp_resources[self.pwp_restore_id].level}")
-        
+
             for self.cbt_restore_id, week_data in self.cbt_restore.items():
                 if self.week_num in week_data and week_data[self.week_num]['res_topup'] > 0:
                     self.cbt_topup_value = week_data[self.week_num]['res_topup']
@@ -791,7 +599,7 @@ class Model:
 
                 if g.debug_level >= 2:
                     print(f"Couns Resource {self.cbt_restore_id} now at: {self.cbt_resources[self.cbt_restore_id].level}")
-                      
+
             for self.couns_restore_id, week_data in self.couns_restore.items():
                 if self.week_num in week_data and week_data[self.week_num]['res_topup'] > 0:
                     self.couns_topup_value = week_data[self.week_num]['res_topup']
@@ -804,7 +612,7 @@ class Model:
                     print(f"PwP Resource {self.couns_restore_id} now at: {self.couns_resources[self.couns_restore_id].level}")
             # don't wait, go to the next step
             yield self.env.timeout(0)
-            
+
     def find_caseload_slot(self,r_type):
 
         self.r_type = r_type
@@ -833,9 +641,9 @@ class Model:
                 if g.debug_level >=2:
                     print("No available caseload with spaces available!")
                 return None, None
-            
+
             yield self.env.timeout(1)
-                     
+
     ###### generator for staff to record non-clinical activity #####
     def staff_entity_generator(self, week_number):
 
@@ -849,7 +657,7 @@ class Model:
     def pwp_staff_generator(self,week_number):
 
         self.pwp_counter = 0
-       
+
         # iterate through the PwP staff accounting for half WTE's
         # counter only increments by 0.5 so in effect each staff member
         # will get processed twice each week
@@ -864,29 +672,29 @@ class Model:
             if g.debug_level >=2:
                 print('')
                 print(f"==== PwP Staff {s.id} Generated ====")
-            
+
             self.staff_results_df.at[s.id,'Week Number'] = week_number
             self.staff_results_df.at[s.id,'Run Number'] = self.run_number
             self.staff_results_df.at[s.id,'Job Role'] = 'PwP'
             self.staff_results_df.at[s.id,'Break Mins'] = g.break_time/2
             #self.staff_results_df.at[s.id,'Huddle Mins'] = g.huddle_time # counsellors only
-            
+
             # monthly staff activities
             if self.week_number % 4 == 0:
-                
+
                 self.staff_results_df.at[s.id,'Supervision Mins'] = g.supervision_time/2
                 self.staff_results_df.at[s.id,'Wellbeing Mins'] = g.wellbeing_time/2
                 self.staff_results_df.at[s.id,'CPD Mins'] = g.cpd_time/2
-        
+
         yield(self.env.timeout(0))
-        
+
         # reset the staff counter back to original level once all staff have been processed
         self.pwp_staff_counter = 100
 
     def cbt_staff_generator(self,week_number):
 
         self.cbt_counter = 0
-       
+
         # iterate through the CBT staff accounting for half WTE's
         # counter only increments by 0.5 so in effect each staff member
         # will get processed twice each week
@@ -901,29 +709,29 @@ class Model:
             if g.debug_level >=2:
                 print('')
                 print(f"==== CBT Staff {s.id} Generated ====")
-            
+
             self.staff_results_df.at[s.id,'Week Number'] = week_number
             self.staff_results_df.at[s.id,'Run Number'] = self.run_number
             self.staff_results_df.at[s.id,'Job Role'] = 'CBT'
             self.staff_results_df.at[s.id,'Break Mins'] = g.break_time/2
             #self.staff_results_df.at[s.id,'Huddle Mins'] = g.huddle_time # counsellors only
-            
+
             # monthly staff activities
             if self.week_number % 4 == 0:
-                
+
                 self.staff_results_df.at[s.id,'Supervision Mins'] = g.supervision_time/2
                 self.staff_results_df.at[s.id,'Wellbeing Mins'] = g.wellbeing_time/2
                 self.staff_results_df.at[s.id,'CPD Mins'] = g.cpd_time/2
-        
+
         yield(self.env.timeout(0))
-        
+
         # reset the staff counter back to original level once all staff have been processed
         self.cbt_staff_counter = 200
 
     def couns_staff_generator(self,week_number):
 
         self.couns_counter = 0
-       
+
         # iterate through the Couns staff accounting for half WTE's
         # counter only increments by 0.5 so in effect each staff member
         # will get processed twice each week
@@ -938,22 +746,22 @@ class Model:
             if g.debug_level >=2:
                 print('')
                 print(f"==== Couns Staff {s.id} Generated ====")
-            
+
             self.staff_results_df.at[s.id,'Week Number'] = week_number
             self.staff_results_df.at[s.id,'Run Number'] = self.run_number
             self.staff_results_df.at[s.id,'Job Role'] = 'Couns'
             self.staff_results_df.at[s.id,'Break Mins'] = g.break_time/2
             self.staff_results_df.at[s.id,'Huddle Mins'] = g.counsellors_huddle/2 # Couns only
-            
+
             # monthly staff activities
             if self.week_number % 4 == 0:
-                
+
                 self.staff_results_df.at[s.id,'Supervision Mins'] = g.supervision_time/2
                 self.staff_results_df.at[s.id,'Wellbeing Mins'] = g.wellbeing_time/2
                 self.staff_results_df.at[s.id,'CPD Mins'] = g.cpd_time/2
-        
+
         yield(self.env.timeout(0))
-        
+
         # reset the staff counter back to original level once all staff have been processed
         self.couns_staff_counter = 300
 
@@ -964,7 +772,7 @@ class Model:
 
         # decide whether the referral was rejected at screening stage
         self.reject_referral = random.uniform(0,1)
-                        
+
         # Increment the patient counter by 1
         self.patient_counter += 1
 
@@ -996,7 +804,7 @@ class Model:
             if g.debug_level >=2:
                 print(f"Referral Accepted flag set to {self.asst_results_df.at[p.id,'Referral Accepted']} for Patient {p.id}")
             # now review the patient
-   
+
         else:
 
              # if this referral is rejected mark as rejected
@@ -1015,14 +823,14 @@ class Model:
             yield self.env.process(self.review_referral(p))
         else:
             yield self.env.timeout(0)
-  
+
     def review_referral(self,patient):
 
         # decide whether the referral needs to go for review if not rejected
         self.requires_review = random.uniform(0,1)
         # decide whether the referral is rejected at review
         self.review_reject = random.uniform(0,1)
-        
+
         p = patient
         # patient needs to be reviewed
         if self.requires_review > g.referral_review_rate:
@@ -1031,12 +839,12 @@ class Model:
                 print(f"Patient {p.id} Sent For Review")
             # patient requires review and was rejected
             if self.review_reject < g.review_rej_rate:
-                
+
                 p.referral_review_rej = 1
                 p.referral_req_review = 1
-                
+
                 self.asst_results_df.at[p.id,'Review Rejected'] = p.referral_review_rej
-                
+
                 if g.debug_level >=2:
                     print(f"Patient {p.id} Reviewed and Rejection flag set to {self.asst_results_df.at[p.id,'Review Rejected']}")
 
@@ -1050,7 +858,7 @@ class Model:
 
                 if g.debug_level >=2:
                     print(f"Patient {p.id} Rejected at Review")
-                
+
             else:
                 # patient requires review and was accepted
                 p.referral_review_rej = 0
@@ -1068,7 +876,7 @@ class Model:
 
                 if g.debug_level >=2:
                     print(f"Patient {p.id} Accepted at Review - go to opt-in")
-                             
+
         else:
             # patient didn't require review
             p.referral_review_rej = 0
@@ -1085,7 +893,7 @@ class Model:
             if g.debug_level >=2:
                 print(f"Patient {p.id} Did Not Require Review, Rejection flag set to {self.asst_results_df.at[p.id,'Review Rejected']}")
 
-            
+
             if g.debug_level >=2:
                 print(f"Patient {p.id} did not require a Review - go to opt-in")
 
@@ -1094,16 +902,16 @@ class Model:
         else:
             # go to opt-in
             yield self.env.process(self.patient_opt_in(p))
-    
+
     def patient_opt_in(self,patient):
 
         p = patient
-        
+
         # now we can carry on and decide whether the patient opted-in or not
         self.patient_optedin = random.uniform(0,1)
         # decide whether the Patient is accepted following TA
         self.ta_accepted = random.uniform(0,1)
-        
+
         if self.patient_optedin > g.opt_in_rate:
             # set flag to show Patient failed to opt-in
             self.asst_results_df.at[p.id, 'Opted In'] = 0
@@ -1115,7 +923,7 @@ class Model:
             self.asst_results_df.at[p.id, 'Opt-in Q Time'] = 0
 
             # # can stop here and move on to next patient
-            yield self.env.timeout(0) 
+            yield self.env.timeout(0)
 
         else: # self.patient_optedin < g.opt_in_rate:
             # otherwise set flag to show they opted-in
@@ -1128,11 +936,11 @@ class Model:
             # record lag-time between opting in and TA appointment, max 4 week window
             self.asst_results_df.at[p.id, 'Opt-in Q Time'
                                         ] = random.uniform(0,4)
-            
+
             yield self.env.process(self.telephone_assessment(p))
-            
+
     def telephone_assessment(self,patient):
-            
+
             p = patient
 
             start_q_ta = self.env.now
@@ -1141,7 +949,7 @@ class Model:
 
             # Record where the patient is on the TA WL
             self.asst_results_df.at[p.id, "TA WL Posn"] = \
-                                                g.number_on_ta_wl                                       
+                                                g.number_on_ta_wl
 
             # Request a Triage resource from the container
             if g.debug_level >=2:
@@ -1173,7 +981,7 @@ class Model:
                                             ] = int(self.random_normal(
                                             g.ta_time_mins
                                             ,g.std_dev))
-            
+
             # decide if the patient is accepted following TA
             if self.ta_accepted > g.ta_accept_rate:
                 # Patient was rejected at TA stage
@@ -1214,7 +1022,7 @@ class Model:
 
                     if g.debug_level >=2:
                         print(f"-- Pathway Runner Initiated --")
-                    
+
                     # now run the pathway runner
                 yield self.env.process(self.pathway_runner(p,p.initial_step))
 
@@ -1225,7 +1033,7 @@ class Model:
         if step_chosen == 'Step2':
             # record that they've started waiting for treatment
             p.step2_wait_week = self.env.now
-            
+
             if g.debug_level >=2:
                 print(f'PATHWAY RUNNER: Patient {p.id} sent down **{p.initial_step}** pathway')
             #yield self.env.timeout(0)
@@ -1248,7 +1056,7 @@ class Model:
                                                 k=self.referrals_this_week)
 
         self.selected_step2_pathway = random.choice(self.step2_pathway_options)
-        
+
         p.step2_path_route = self.selected_step2_pathway
 
         self.step2_results_df.at[p.id, 'Route Name'
@@ -1270,18 +1078,18 @@ class Model:
         # self.step2_waiting_list['WL Position'] = 0
         # self.step2_waiting_list['Start Week'] = 0
 
-                        
+
             #yield self.env.timeout(0)
             yield self.env.process(self.step2_pwp_process(p))
         else:
             if g.debug_level >=2:
                 print(f"Patient {p.id} sent to Group store")
-            
+
                 self.group_store.put(p)
 
                 # add to group WL
                 g.number_on_group_wl += 1
-                
+
                 if g.debug_level >=2:
                     print(f'Group store contains {len(self.group_store.items)} of possible {g.step2_group_size}')
 
@@ -1310,7 +1118,7 @@ class Model:
                         yield self.env.process(self.step2_group_process(p))
 
         #yield self.env.timeout(0)
-            
+
     ###### step3 pathway #####
     def patient_step3_pathway(self, patient):
 
@@ -1338,7 +1146,7 @@ class Model:
             self.step3_waiting_list.at[p.id, 'IsWaiting'] = 1
             self.step3_waiting_list.at[p.id, 'WL Position'] = g.number_on_cbt_wl
             self.step3_waiting_list.at[p.id, 'Start Week'] = self.week_number
-            
+
             if g.debug_level >=2:
                 print(f"FUNC PROCESS patient_step3_pathway: Patient {p.id} Initiating {p.step3_path_route} Step 3 Route")
 
@@ -1353,7 +1161,7 @@ class Model:
             self.step3_waiting_list.at[p.id, 'IsWaiting'] = 1
             self.step3_waiting_list.at[p.id, 'WL Position'] = g.number_on_couns_wl
             self.step3_waiting_list.at[p.id, 'Start Week'] = self.week_number
-            
+
             if g.debug_level >=2:
                 print(f"FUNC PROCESS patient_step3_pathway: Patient {p.id} Initiating {p.step3_path_route} Step 3 Route")
             #yield self.env.timeout(0)
@@ -1383,7 +1191,7 @@ class Model:
 
         while True:
             self.result = yield self.env.process(self.find_caseload_slot(p.step2_path_route))
-            
+
             if self.result and isinstance(self.result, tuple) and len(self.result) == 2:
                 self.pwp_caseload_id, self.pwp_caseload_res = self.result
                 if self.pwp_caseload_res is not None:  # Ensure the resource is valid
@@ -1416,7 +1224,7 @@ class Model:
 
         # add to caseload
         g.number_on_pwp_cl += 1
-        
+
         # as each patient reaches this stage take them off PwP wl
         g.number_on_pwp_wl -= 1
 
@@ -1435,7 +1243,7 @@ class Model:
         self.end_q_pwp = self.env.now
 
         p.step2_start_week = self.env.now
-       
+
         self.q_time_pwp = p.step2_start_week - p.step2_wait_week
         if g.debug_level >=2:
             print(f'Patient {p.id} WEEK NUMBER {self.env.now} waited {self.q_time_pwp} weeks from {p.step2_wait_week} weeks to {p.step2_start_week} to enter {p.step2_path_route} treatment')
@@ -1540,20 +1348,20 @@ class Model:
         if self.pwp_dna_counter >= self.dnas_allowed:
 
             self.env.process(self.record_caseload_use(p.step2_path_route,self.pwp_caseload_id,self.pwp_random_weeks[self.pwp_session_counter]))
-            
+
         else:
             # record when the caseload resource can be restored
             self.env.process(self.record_caseload_use(p.step2_path_route,self.pwp_caseload_id,max(self.pwp_random_weeks)))
-        
+
         # reset counters for pwp sessions
         self.pwp_session_counter = 0
         self.pwp_dna_counter = 0
-        
+
         # take off caseload
         g.number_on_pwp_cl -=1
-        
+
         yield self.env.timeout(0)
-               
+
     def step2_group_process(self,patient):
 
         p = patient
@@ -1696,10 +1504,10 @@ class Model:
         # reset counters for pwp sessions
         self.group_session_counter = 0
         self.group_dna_counter = 0
-        
+
         # take off caseload
         g.number_on_group_cl -=1
-              
+
         yield self.env.timeout(self.group_session_counter)
 
     def step3_cbt_process(self,patient):
@@ -1725,7 +1533,7 @@ class Model:
         # Check if there is a caseload slot available and return the resource
         while True:
             self.result = yield self.env.process(self.find_caseload_slot(p.step3_path_route))
-            
+
             if self.result and isinstance(self.result, tuple) and len(self.result) == 2:
                 self.cbt_caseload_id, self.cbt_caseload_res = self.result
                 if self.cbt_caseload_res is not None:  # Ensure the resource is valid
@@ -1780,7 +1588,7 @@ class Model:
         self.step3_results_df.at[p.id, 'Week Number'] = self.week_number
         # Calculate how long patient queued for PwP
         self.step3_results_df.at[p.id, 'Q Time'] = self.q_time_cbt
-        
+
         # decide whether the DNA policy had been followed or not
         self.vary_dna_policy = random.uniform(0,1)
 
@@ -1894,18 +1702,18 @@ class Model:
         if self.cbt_dna_counter >= self.dnas_allowed:
 
             self.env.process(self.record_caseload_use(p.step3_path_route,self.cbt_caseload_id,self.cbt_random_weeks[self.cbt_session_counter]))
-            
+
         else:
             # record when the caseload resource can be restored
             self.env.process(self.record_caseload_use(p.step3_path_route,self.cbt_caseload_id,max(self.cbt_random_weeks)))
-        
+
         # reset counters for pwp sessions
         self.cbt_session_counter = 0
         self.cbt_dna_counter = 0
-        
+
         # take off caseload
         g.number_on_cbt_cl -=1
-        
+
         yield self.env.timeout(0)
 
     def step3_couns_process(self,patient):
@@ -1929,7 +1737,7 @@ class Model:
         # Check if there is a caseload slot available and return the resource
         while True:
             self.result = yield self.env.process(self.find_caseload_slot(p.step3_path_route))
-            
+
             if self.result and isinstance(self.result, tuple) and len(self.result) == 2:
                 self.couns_caseload_id, self.couns_caseload_res = self.result
                 if self.couns_caseload_res is not None:  # Ensure the resource is valid
@@ -1992,7 +1800,7 @@ class Model:
         self.step3_results_df.at[p.id, 'Week Number'] = self.week_number
         # Calculate how long patient queued for PwP
         self.step3_results_df.at[p.id, 'Q Time'] = self.q_time_couns
-        
+
         # decide whether the DNA policy had been followed or not
         self.vary_dna_policy = random.uniform(0,1)
 
@@ -2114,18 +1922,18 @@ class Model:
         if self.couns_dna_counter >= self.dnas_allowed:
 
             self.env.process(self.record_caseload_use(p.step3_path_route,self.couns_caseload_id,self.couns_random_weeks[self.couns_session_counter]))
-            
+
         else:
             # record when the caseload resource can be restored
             self.env.process(self.record_caseload_use(p.step3_path_route,self.couns_caseload_id,max(self.couns_random_weeks)))
-        
+
         # reset counters for pwp sessions
         self.couns_session_counter = 0
         self.couns_dna_counter = 0
-        
+
         # take off caseload
         g.number_on_couns_cl -=1
-        
+
         yield self.env.timeout(0)
 
     # This method calculates results over each single run
@@ -2137,7 +1945,7 @@ class Model:
         self.ref_tot_optin = self.asst_results_df['Opted In'].sum()
         self.mean_qtime_ta =  self.asst_results_df['Opt-in Q Time'].mean()
         self.tot_ta_accept = self.asst_results_df['TA Outcome'].sum()
-        
+
         # reset waiting lists and caseloads ready for next run
         g.number_on_pwp_wl = 0
         g.number_on_group_wl = 0
@@ -2153,9 +1961,9 @@ class Model:
     # and in turns calls anything we need to generate results for the run
     def run(self, print_run_results=True):
 
-        # create a simpy store for this run to hold the patients until the group 
-        # has enough members. This will persist for an entire run has finished 
-        # and patients will be added to it and taken out of it as groups fill up 
+        # create a simpy store for this run to hold the patients until the group
+        # has enough members. This will persist for an entire run has finished
+        # and patients will be added to it and taken out of it as groups fill up
         # and are run
         self.group_store = simpy.Store(
                                         self.env,
@@ -2181,119 +1989,3 @@ class Model:
             #print(g.weekly_wl_posn)
             print (f"Run Number {self.run_number}")
             print (self.asst_results_df)
-
-# Class representing a Trial for our simulation - a batch of simulation runs.
-class Trial:
-    def __init__(self):
-        self.df_trial_results = pd.DataFrame()
-        self.df_trial_results["Run Number"] = [0]
-        self.df_trial_results["Mean Screen Time"] = [0.0]
-        self.df_trial_results["Total Referrals Rejected"] = [0]
-        self.df_trial_results["Mean Opt-in Wait"] = [0.0]
-        self.df_trial_results["Total Opted In"] = [0]
-        self.df_trial_results["Mean Q Time TA"] = [0.0]
-        self.df_trial_results["Total Accepted"] = [0]
-        self.df_trial_results.set_index("Run Number", inplace=True)
-
-        self.asst_weekly_dfs = []
-        self.step2_weekly_dfs = []
-        self.step3_weekly_dfs = []
-        self.step2_waiting_dfs = []
-        self.step3_waiting_dfs = []
-        self.staff_weekly_dfs = []
-
-    def run_trial(self):
-
-        for run in range(g.number_of_runs):
-            my_model = Model(run)
-            my_model.run(print_run_results=False)
-
-            self.df_trial_results.loc[run] = [
-                my_model.mean_screen_time,
-                my_model.reject_ref_total,
-                my_model.mean_optin_wait,
-                my_model.ref_tot_optin,
-                my_model.mean_qtime_ta,
-                my_model.tot_ta_accept
-            ]
-
-            my_model.step2_results_df = pd.DataFrame(my_model.step2_results_df)
-            my_model.step2_sessions_df = pd.DataFrame(my_model.step2_sessions_df)
-            my_model.step3_results_df = pd.DataFrame(my_model.step3_results_df)
-            my_model.step3_sessions_df = pd.DataFrame(my_model.step3_sessions_df)
-
-            if run == 0:
-                self.step2_results_df = my_model.step2_results_df.copy()
-                self.step3_results_df = my_model.step3_results_df.copy()
-                self.step2_sessions_df = my_model.step2_sessions_df.copy()
-                self.step3_sessions_df = my_model.step3_sessions_df.copy()
-            else:
-                self.step2_results_df = pd.concat([self.step2_results_df, my_model.step2_results_df])
-                self.step3_results_df = pd.concat([self.step3_results_df, my_model.step3_results_df])
-                self.step2_sessions_df = pd.concat([self.step2_sessions_df, my_model.step2_sessions_df])
-                self.step3_sessions_df = pd.concat([self.step3_sessions_df, my_model.step3_sessions_df])
-
-
-            my_model.asst_weekly_stats = pd.DataFrame(my_model.asst_weekly_stats)
-            my_model.step2_weekly_stats = pd.DataFrame(my_model.step2_weekly_stats)
-            my_model.step3_weekly_stats = pd.DataFrame(my_model.step3_weekly_stats)
-            my_model.step2_waiting_stats = pd.DataFrame(my_model.step2_waiting_stats)
-            my_model.step3_waiting_stats = pd.DataFrame(my_model.step3_waiting_stats)
-            my_model.staff_weekly_stats = pd.DataFrame(my_model.staff_weekly_stats)
-
-            my_model.asst_weekly_stats['Run'] = run
-            my_model.step2_waiting_stats['Run'] = run
-            my_model.step3_waiting_stats['Run'] = run
-            my_model.step2_weekly_stats['Run'] = run
-            my_model.step3_weekly_stats['Run'] = run
-            my_model.staff_weekly_stats['Run'] = run
-
-            self.asst_weekly_dfs.append(my_model.asst_weekly_stats)
-            self.step2_waiting_dfs.append(my_model.step2_waiting_stats)
-            self.step3_waiting_dfs.append(my_model.step3_waiting_stats)
-            self.step2_weekly_dfs.append(my_model.step2_weekly_stats)
-            self.step3_weekly_dfs.append(my_model.step3_weekly_stats)
-            self.staff_weekly_dfs.append(my_model.staff_weekly_stats)
-
-            if run == 0:
-                self.caseload_weekly_dfs = pd.json_normalize(g.caseload_weekly_stats, 'Data', ['Run Number', 'Week Number'])
-            else:
-                self.caseload_weekly_dfs = pd.concat([
-                    self.caseload_weekly_dfs,
-                    pd.json_normalize(g.caseload_weekly_stats, 'Data', ['Run Number', 'Week Number'])
-                ])
-
-        return (
-            self.step2_results_df, 
-            self.step2_sessions_df, 
-            self.step3_results_df,
-            self.step3_sessions_df,  
-            #self.df_trial_results, 
-            pd.concat(self.asst_weekly_dfs) if self.asst_weekly_dfs else pd.DataFrame(),
-            pd.concat(self.step2_waiting_dfs) if self.step2_waiting_dfs else pd.DataFrame(),
-            pd.concat(self.step3_waiting_dfs) if self.step3_waiting_dfs else pd.DataFrame(),
-            pd.concat(self.staff_weekly_dfs) if self.staff_weekly_dfs else pd.DataFrame(),
-            self.caseload_weekly_dfs if hasattr(self, 'caseload_weekly_dfs') else pd.DataFrame()
-        )
-
-if __name__ == "__main__":
-    my_trial = Trial()
-    step2_results_df, step2_sessions_df, step3_results_df, step3_sessions_df, asst_weekly_dfs, step2_waiting_dfs, step3_waiting_dfs, staff_weekly_dfs, caseload_weekly_dfs  = my_trial.run_trial()
-
-    # print(df_trial_results)
-    # step2_waiting_dfs.to_csv("step2_waiters.csv", index=True)
-    # step3_sessions_df.to_csv("step3_sessions.csv", index=True)
-    # step2_results_df.to_csv("step2_results.csv", index=True)
-    # caseload_weekly_dfs.to_csv("caseloads.csv", index=True)
-    #step2_results_df, step3_results_df, df_trial_results, asst_weekly_dfs, step2_weekly_dfs, step3_weekly_dfs, staff_weekly_dfs, caseload_weekly_dfs  = my_trial.run_trial()
-
-#df_trial_results, print(asst_weekly_dfs.to_string()), print(step2_weekly_dfs.to_string()), print(step3_weekly_dfs.to_string()), staff_weekly_dfs, print(caseload_weekly_dfs.to_string())
-
-# asst_weekly_dfs.to_csv('S:\Departmental Shares\IM&T\Information\Business Intelligence\Heath McDonald\HSMA\Discrete Event Simulations\IAPT DES\asst_weekly_summary.csv')
-# step2_weekly_dfs.to_csv('step2_weekly_summary.csv')
-# step3_weekly_dfs.to_csv('step3_weekly_summary.csv')
-# caseload_weekly_dfs.to_csv('caseload_weekly_summary.csv')
-
-#S:\Departmental Shares\IM&T\Information\Business Intelligence\Heath McDonald\HSMA\Discrete Event Simulations\IAPT DES
-
-

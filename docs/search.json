@@ -1,0 +1,534 @@
+[
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
+    "section": "",
+    "text": "Class controlling model-level parameters\n\n\n\niapt_classes.g\n\n\n\n\n\n\n\nEntity-level\n\n\n\niapt_classes.Staff\n\n\n\niapt_classes.Patient\n\n\n\n\n\n\n\nClass and methods controlling the flow of patients through the system\n\n\n\niapt_classes.Model\n\n\n\n\n\n\n\nClass and methods to run and analyse a trial consisting of multiple model runs\n\n\n\niapt_classes.Trial",
+    "crumbs": [
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "reference/index.html#set-up-options",
+    "href": "reference/index.html#set-up-options",
+    "title": "Function reference",
+    "section": "",
+    "text": "Class controlling model-level parameters\n\n\n\niapt_classes.g",
+    "crumbs": [
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "reference/index.html#entities",
+    "href": "reference/index.html#entities",
+    "title": "Function reference",
+    "section": "",
+    "text": "Entity-level\n\n\n\niapt_classes.Staff\n\n\n\niapt_classes.Patient",
+    "crumbs": [
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "reference/index.html#iapt-pathway-model",
+    "href": "reference/index.html#iapt-pathway-model",
+    "title": "Function reference",
+    "section": "",
+    "text": "Class and methods controlling the flow of patients through the system\n\n\n\niapt_classes.Model",
+    "crumbs": [
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "reference/index.html#trial-creation",
+    "href": "reference/index.html#trial-creation",
+    "title": "Function reference",
+    "section": "",
+    "text": "Class and methods to run and analyse a trial consisting of multiple model runs\n\n\n\niapt_classes.Trial",
+    "crumbs": [
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.Trial.step3_weekly_dfs.html",
+    "href": "reference/iapt_classes.Trial.step3_weekly_dfs.html",
+    "title": "step3_weekly_dfs",
+    "section": "",
+    "text": "step3_weekly_dfs\nTrial.step3_weekly_dfs"
+  },
+  {
+    "objectID": "reference/iapt_classes.Trial.step2_weekly_dfs.html",
+    "href": "reference/iapt_classes.Trial.step2_weekly_dfs.html",
+    "title": "step2_weekly_dfs",
+    "section": "",
+    "text": "step2_weekly_dfs\nTrial.step2_weekly_dfs"
+  },
+  {
+    "objectID": "reference/iapt_classes.Trial.staff_weekly_dfs.html",
+    "href": "reference/iapt_classes.Trial.staff_weekly_dfs.html",
+    "title": "staff_weekly_dfs",
+    "section": "",
+    "text": "staff_weekly_dfs\nTrial.staff_weekly_dfs"
+  },
+  {
+    "objectID": "reference/iapt_classes.Trial.html",
+    "href": "reference/iapt_classes.Trial.html",
+    "title": "iapt_classes.Trial",
+    "section": "",
+    "text": "Trial(self)\n\n\n\n\n\nName\nDescription\n\n\n\n\nasst_weekly_dfs\n\n\n\ndf_trial_results\n\n\n\nstaff_weekly_dfs\n\n\n\nstep2_waiting_dfs\n\n\n\nstep2_weekly_dfs\n\n\n\nstep3_waiting_dfs\n\n\n\nstep3_weekly_dfs\n\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nrun_trial",
+    "crumbs": [
+      "Trial Creation",
+      "iapt_classes.Trial"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.Trial.html#attributes",
+    "href": "reference/iapt_classes.Trial.html#attributes",
+    "title": "iapt_classes.Trial",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nasst_weekly_dfs\n\n\n\ndf_trial_results\n\n\n\nstaff_weekly_dfs\n\n\n\nstep2_waiting_dfs\n\n\n\nstep2_weekly_dfs\n\n\n\nstep3_waiting_dfs\n\n\n\nstep3_weekly_dfs",
+    "crumbs": [
+      "Trial Creation",
+      "iapt_classes.Trial"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.Trial.html#methods",
+    "href": "reference/iapt_classes.Trial.html#methods",
+    "title": "iapt_classes.Trial",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nrun_trial",
+    "crumbs": [
+      "Trial Creation",
+      "iapt_classes.Trial"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.Trial.asst_weekly_dfs.html",
+    "href": "reference/iapt_classes.Trial.asst_weekly_dfs.html",
+    "title": "asst_weekly_dfs",
+    "section": "",
+    "text": "asst_weekly_dfs\nTrial.asst_weekly_dfs"
+  },
+  {
+    "objectID": "reference/iapt_classes.Patient.html",
+    "href": "reference/iapt_classes.Patient.html",
+    "title": "iapt_classes.Patient",
+    "section": "",
+    "text": "Patient(self, p_id)\n\n\n\n\n\nName\nDescription\n\n\n\n\nattended_ta\n\n\n\nid\n\n\n\ninitial_step\n\n\n\nopt_in_qtime\n\n\n\nopt_in_wait\n\n\n\nopted_in\n\n\n\npatient_at_risk\n\n\n\nreferral_rejected\n\n\n\nreferral_req_review\n\n\n\nreferral_review_rej\n\n\n\nreferral_time_screen\n\n\n\nstep2_drop_out\n\n\n\nstep2_end_week\n\n\n\nstep2_path_route\n\n\n\nstep2_place_on_wl\n\n\n\nstep2_resource_id\n\n\n\nstep2_session_count\n\n\n\nstep2_start_week\n\n\n\nstep2_wait_week\n\n\n\nstep2_week_number\n\n\n\nstep3_drop_out\n\n\n\nstep3_end_week\n\n\n\nstep3_path_route\n\n\n\nstep3_place_on_wl\n\n\n\nstep3_resource_id\n\n\n\nstep3_session_count\n\n\n\nstep3_start_week\n\n\n\nstep3_week_number\n\n\n\ntime_to_mdt\n\n\n\nweek_added",
+    "crumbs": [
+      "Entities",
+      "iapt_classes.Patient"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.Patient.html#attributes",
+    "href": "reference/iapt_classes.Patient.html#attributes",
+    "title": "iapt_classes.Patient",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nattended_ta\n\n\n\nid\n\n\n\ninitial_step\n\n\n\nopt_in_qtime\n\n\n\nopt_in_wait\n\n\n\nopted_in\n\n\n\npatient_at_risk\n\n\n\nreferral_rejected\n\n\n\nreferral_req_review\n\n\n\nreferral_review_rej\n\n\n\nreferral_time_screen\n\n\n\nstep2_drop_out\n\n\n\nstep2_end_week\n\n\n\nstep2_path_route\n\n\n\nstep2_place_on_wl\n\n\n\nstep2_resource_id\n\n\n\nstep2_session_count\n\n\n\nstep2_start_week\n\n\n\nstep2_wait_week\n\n\n\nstep2_week_number\n\n\n\nstep3_drop_out\n\n\n\nstep3_end_week\n\n\n\nstep3_path_route\n\n\n\nstep3_place_on_wl\n\n\n\nstep3_resource_id\n\n\n\nstep3_session_count\n\n\n\nstep3_start_week\n\n\n\nstep3_week_number\n\n\n\ntime_to_mdt\n\n\n\nweek_added",
+    "crumbs": [
+      "Entities",
+      "iapt_classes.Patient"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.top_up_caseloads.html",
+    "href": "reference/iapt_classes.Model.top_up_caseloads.html",
+    "title": "top_up_caseloads",
+    "section": "",
+    "text": "top_up_caseloads\nModel.top_up_caseloads(week_number)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.telephone_assessment.html",
+    "href": "reference/iapt_classes.Model.telephone_assessment.html",
+    "title": "telephone_assessment",
+    "section": "",
+    "text": "telephone_assessment\nModel.telephone_assessment(patient)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.step3_sessions_df.html",
+    "href": "reference/iapt_classes.Model.step3_sessions_df.html",
+    "title": "step3_sessions_df",
+    "section": "",
+    "text": "step3_sessions_df\nModel.step3_sessions_df"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.step3_couns_process.html",
+    "href": "reference/iapt_classes.Model.step3_couns_process.html",
+    "title": "step3_couns_process",
+    "section": "",
+    "text": "step3_couns_process\nModel.step3_couns_process(patient)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.step2_waiting_list.html",
+    "href": "reference/iapt_classes.Model.step2_waiting_list.html",
+    "title": "step2_waiting_list",
+    "section": "",
+    "text": "step2_waiting_list\nModel.step2_waiting_list"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.step2_results_df.html",
+    "href": "reference/iapt_classes.Model.step2_results_df.html",
+    "title": "step2_results_df",
+    "section": "",
+    "text": "step2_results_df\nModel.step2_results_df"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.step2_group_process.html",
+    "href": "reference/iapt_classes.Model.step2_group_process.html",
+    "title": "step2_group_process",
+    "section": "",
+    "text": "step2_group_process\nModel.step2_group_process(patient)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.staff_entity_generator.html",
+    "href": "reference/iapt_classes.Model.staff_entity_generator.html",
+    "title": "staff_entity_generator",
+    "section": "",
+    "text": "staff_entity_generator\nModel.staff_entity_generator(week_number)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.run_number.html",
+    "href": "reference/iapt_classes.Model.run_number.html",
+    "title": "run_number",
+    "section": "",
+    "text": "run_number\nModel.run_number"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.review_referral.html",
+    "href": "reference/iapt_classes.Model.review_referral.html",
+    "title": "review_referral",
+    "section": "",
+    "text": "review_referral\nModel.review_referral(patient)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.replenish_weekly_resources.html",
+    "href": "reference/iapt_classes.Model.replenish_weekly_resources.html",
+    "title": "replenish_weekly_resources",
+    "section": "",
+    "text": "replenish_weekly_resources\nModel.replenish_weekly_resources()"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.random_normal.html",
+    "href": "reference/iapt_classes.Model.random_normal.html",
+    "title": "random_normal",
+    "section": "",
+    "text": "random_normal\nModel.random_normal(mean, std_dev)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.pwp_staff_generator.html",
+    "href": "reference/iapt_classes.Model.pwp_staff_generator.html",
+    "title": "pwp_staff_generator",
+    "section": "",
+    "text": "pwp_staff_generator\nModel.pwp_staff_generator(week_number)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.patient_treatment_generator.html",
+    "href": "reference/iapt_classes.Model.patient_treatment_generator.html",
+    "title": "patient_treatment_generator",
+    "section": "",
+    "text": "patient_treatment_generator\nModel.patient_treatment_generator(number_of_referrals, treatment_week_number)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.patient_step2_pathway.html",
+    "href": "reference/iapt_classes.Model.patient_step2_pathway.html",
+    "title": "patient_step2_pathway",
+    "section": "",
+    "text": "patient_step2_pathway\nModel.patient_step2_pathway(patient)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.patient_counter.html",
+    "href": "reference/iapt_classes.Model.patient_counter.html",
+    "title": "patient_counter",
+    "section": "",
+    "text": "patient_counter\nModel.patient_counter"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.generator_patient_referrals.html",
+    "href": "reference/iapt_classes.Model.generator_patient_referrals.html",
+    "title": "generator_patient_referrals",
+    "section": "",
+    "text": "generator_patient_referrals\nModel.generator_patient_referrals(ref_week_number)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.env.html",
+    "href": "reference/iapt_classes.Model.env.html",
+    "title": "env",
+    "section": "",
+    "text": "env\nModel.env"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.couns_staff_counter.html",
+    "href": "reference/iapt_classes.Model.couns_staff_counter.html",
+    "title": "couns_staff_counter",
+    "section": "",
+    "text": "couns_staff_counter\nModel.couns_staff_counter"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.cbt_staff_counter.html",
+    "href": "reference/iapt_classes.Model.cbt_staff_counter.html",
+    "title": "cbt_staff_counter",
+    "section": "",
+    "text": "cbt_staff_counter\nModel.cbt_staff_counter"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.calculate_run_results.html",
+    "href": "reference/iapt_classes.Model.calculate_run_results.html",
+    "title": "calculate_run_results",
+    "section": "",
+    "text": "calculate_run_results\nModel.calculate_run_results()"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.asst_results_df.html",
+    "href": "reference/iapt_classes.Model.asst_results_df.html",
+    "title": "asst_results_df",
+    "section": "",
+    "text": "asst_results_df\nModel.asst_results_df"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.caseload_builder.html",
+    "href": "reference/iapt_classes.Model.caseload_builder.html",
+    "title": "caseload_builder",
+    "section": "",
+    "text": "caseload_builder\nModel.caseload_builder()"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.cbt_staff_generator.html",
+    "href": "reference/iapt_classes.Model.cbt_staff_generator.html",
+    "title": "cbt_staff_generator",
+    "section": "",
+    "text": "cbt_staff_generator\nModel.cbt_staff_generator(week_number)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.couns_staff_generator.html",
+    "href": "reference/iapt_classes.Model.couns_staff_generator.html",
+    "title": "couns_staff_generator",
+    "section": "",
+    "text": "couns_staff_generator\nModel.couns_staff_generator(week_number)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.find_caseload_slot.html",
+    "href": "reference/iapt_classes.Model.find_caseload_slot.html",
+    "title": "find_caseload_slot",
+    "section": "",
+    "text": "find_caseload_slot\nModel.find_caseload_slot(r_type)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.pathway_runner.html",
+    "href": "reference/iapt_classes.Model.pathway_runner.html",
+    "title": "pathway_runner",
+    "section": "",
+    "text": "pathway_runner\nModel.pathway_runner(patient, step_chosen)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.patient_opt_in.html",
+    "href": "reference/iapt_classes.Model.patient_opt_in.html",
+    "title": "patient_opt_in",
+    "section": "",
+    "text": "patient_opt_in\nModel.patient_opt_in(patient)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.patient_step3_pathway.html",
+    "href": "reference/iapt_classes.Model.patient_step3_pathway.html",
+    "title": "patient_step3_pathway",
+    "section": "",
+    "text": "patient_step3_pathway\nModel.patient_step3_pathway(patient)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.pwp_staff_counter.html",
+    "href": "reference/iapt_classes.Model.pwp_staff_counter.html",
+    "title": "pwp_staff_counter",
+    "section": "",
+    "text": "pwp_staff_counter\nModel.pwp_staff_counter"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.html",
+    "href": "reference/iapt_classes.Model.html",
+    "title": "iapt_classes.Model",
+    "section": "",
+    "text": "Model(self, run_number)\n\n\n\n\n\nName\nDescription\n\n\n\n\nasst_results_df\n\n\n\ncbt_staff_counter\n\n\n\ncouns_staff_counter\n\n\n\nenv\n\n\n\npatient_counter\n\n\n\npwp_staff_counter\n\n\n\nrun_number\n\n\n\nstaff_results_df\n\n\n\nstep2_results_df\n\n\n\nstep2_sessions_df\n\n\n\nstep2_waiting_list\n\n\n\nstep3_results_df\n\n\n\nstep3_sessions_df\n\n\n\nstep3_waiting_list\n\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncalculate_run_results\n\n\n\ncaseload_builder\n\n\n\ncbt_staff_generator\n\n\n\ncouns_staff_generator\n\n\n\nfind_caseload_slot\n\n\n\ngenerator_patient_referrals\n\n\n\npathway_runner\n\n\n\npatient_opt_in\n\n\n\npatient_step2_pathway\n\n\n\npatient_step3_pathway\n\n\n\npatient_treatment_generator\n\n\n\npwp_staff_generator\n\n\n\nrandom_normal\n\n\n\nrecord_caseload_use\n\n\n\nreplenish_weekly_resources\n\n\n\nresource_builder\n\n\n\nreview_referral\n\n\n\nrun\n\n\n\nscreen_referral\n\n\n\nstaff_entity_generator\n\n\n\nstep2_group_process\n\n\n\nstep2_pwp_process\n\n\n\nstep3_cbt_process\n\n\n\nstep3_couns_process\n\n\n\ntelephone_assessment\n\n\n\nthe_governor\n\n\n\ntop_up_caseloads\n\n\n\nweekly_stats",
+    "crumbs": [
+      "IAPT Pathway Model",
+      "iapt_classes.Model"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.html#attributes",
+    "href": "reference/iapt_classes.Model.html#attributes",
+    "title": "iapt_classes.Model",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nasst_results_df\n\n\n\ncbt_staff_counter\n\n\n\ncouns_staff_counter\n\n\n\nenv\n\n\n\npatient_counter\n\n\n\npwp_staff_counter\n\n\n\nrun_number\n\n\n\nstaff_results_df\n\n\n\nstep2_results_df\n\n\n\nstep2_sessions_df\n\n\n\nstep2_waiting_list\n\n\n\nstep3_results_df\n\n\n\nstep3_sessions_df\n\n\n\nstep3_waiting_list",
+    "crumbs": [
+      "IAPT Pathway Model",
+      "iapt_classes.Model"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.html#methods",
+    "href": "reference/iapt_classes.Model.html#methods",
+    "title": "iapt_classes.Model",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\ncalculate_run_results\n\n\n\ncaseload_builder\n\n\n\ncbt_staff_generator\n\n\n\ncouns_staff_generator\n\n\n\nfind_caseload_slot\n\n\n\ngenerator_patient_referrals\n\n\n\npathway_runner\n\n\n\npatient_opt_in\n\n\n\npatient_step2_pathway\n\n\n\npatient_step3_pathway\n\n\n\npatient_treatment_generator\n\n\n\npwp_staff_generator\n\n\n\nrandom_normal\n\n\n\nrecord_caseload_use\n\n\n\nreplenish_weekly_resources\n\n\n\nresource_builder\n\n\n\nreview_referral\n\n\n\nrun\n\n\n\nscreen_referral\n\n\n\nstaff_entity_generator\n\n\n\nstep2_group_process\n\n\n\nstep2_pwp_process\n\n\n\nstep3_cbt_process\n\n\n\nstep3_couns_process\n\n\n\ntelephone_assessment\n\n\n\nthe_governor\n\n\n\ntop_up_caseloads\n\n\n\nweekly_stats",
+    "crumbs": [
+      "IAPT Pathway Model",
+      "iapt_classes.Model"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.record_caseload_use.html",
+    "href": "reference/iapt_classes.Model.record_caseload_use.html",
+    "title": "record_caseload_use",
+    "section": "",
+    "text": "record_caseload_use\nModel.record_caseload_use(r_type, r_id, week_number)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.resource_builder.html",
+    "href": "reference/iapt_classes.Model.resource_builder.html",
+    "title": "resource_builder",
+    "section": "",
+    "text": "resource_builder\nModel.resource_builder()"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.run.html",
+    "href": "reference/iapt_classes.Model.run.html",
+    "title": "run",
+    "section": "",
+    "text": "run\nModel.run(print_run_results=True)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.screen_referral.html",
+    "href": "reference/iapt_classes.Model.screen_referral.html",
+    "title": "screen_referral",
+    "section": "",
+    "text": "screen_referral\nModel.screen_referral(asst_week_number)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.staff_results_df.html",
+    "href": "reference/iapt_classes.Model.staff_results_df.html",
+    "title": "staff_results_df",
+    "section": "",
+    "text": "staff_results_df\nModel.staff_results_df"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.step2_pwp_process.html",
+    "href": "reference/iapt_classes.Model.step2_pwp_process.html",
+    "title": "step2_pwp_process",
+    "section": "",
+    "text": "step2_pwp_process\nModel.step2_pwp_process(patient)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.step2_sessions_df.html",
+    "href": "reference/iapt_classes.Model.step2_sessions_df.html",
+    "title": "step2_sessions_df",
+    "section": "",
+    "text": "step2_sessions_df\nModel.step2_sessions_df"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.step3_cbt_process.html",
+    "href": "reference/iapt_classes.Model.step3_cbt_process.html",
+    "title": "step3_cbt_process",
+    "section": "",
+    "text": "step3_cbt_process\nModel.step3_cbt_process(patient)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.step3_results_df.html",
+    "href": "reference/iapt_classes.Model.step3_results_df.html",
+    "title": "step3_results_df",
+    "section": "",
+    "text": "step3_results_df\nModel.step3_results_df"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.step3_waiting_list.html",
+    "href": "reference/iapt_classes.Model.step3_waiting_list.html",
+    "title": "step3_waiting_list",
+    "section": "",
+    "text": "step3_waiting_list\nModel.step3_waiting_list"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.the_governor.html",
+    "href": "reference/iapt_classes.Model.the_governor.html",
+    "title": "the_governor",
+    "section": "",
+    "text": "the_governor\nModel.the_governor()"
+  },
+  {
+    "objectID": "reference/iapt_classes.Model.weekly_stats.html",
+    "href": "reference/iapt_classes.Model.weekly_stats.html",
+    "title": "weekly_stats",
+    "section": "",
+    "text": "weekly_stats\nModel.weekly_stats(stats_week_number)"
+  },
+  {
+    "objectID": "reference/iapt_classes.Staff.html",
+    "href": "reference/iapt_classes.Staff.html",
+    "title": "iapt_classes.Staff",
+    "section": "",
+    "text": "Staff(self, s_id)\n\n\n\n\n\nName\nDescription\n\n\n\n\nid\n\n\n\nstaff_band\n\n\n\nstaff_hours_avail\n\n\n\nstaff_time_breaks\n\n\n\nstaff_time_cpd\n\n\n\nstaff_time_huddle\n\n\n\nstaff_time_superv\n\n\n\nstaff_time_wellbg\n\n\n\nstaff_type\n\n\n\nweek_number",
+    "crumbs": [
+      "Entities",
+      "iapt_classes.Staff"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.Staff.html#attributes",
+    "href": "reference/iapt_classes.Staff.html#attributes",
+    "title": "iapt_classes.Staff",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nid\n\n\n\nstaff_band\n\n\n\nstaff_hours_avail\n\n\n\nstaff_time_breaks\n\n\n\nstaff_time_cpd\n\n\n\nstaff_time_huddle\n\n\n\nstaff_time_superv\n\n\n\nstaff_time_wellbg\n\n\n\nstaff_type\n\n\n\nweek_number",
+    "crumbs": [
+      "Entities",
+      "iapt_classes.Staff"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.Trial.df_trial_results.html",
+    "href": "reference/iapt_classes.Trial.df_trial_results.html",
+    "title": "df_trial_results",
+    "section": "",
+    "text": "df_trial_results\nTrial.df_trial_results"
+  },
+  {
+    "objectID": "reference/iapt_classes.Trial.run_trial.html",
+    "href": "reference/iapt_classes.Trial.run_trial.html",
+    "title": "run_trial",
+    "section": "",
+    "text": "run_trial\nTrial.run_trial()"
+  },
+  {
+    "objectID": "reference/iapt_classes.Trial.step2_waiting_dfs.html",
+    "href": "reference/iapt_classes.Trial.step2_waiting_dfs.html",
+    "title": "step2_waiting_dfs",
+    "section": "",
+    "text": "step2_waiting_dfs\nTrial.step2_waiting_dfs"
+  },
+  {
+    "objectID": "reference/iapt_classes.Trial.step3_waiting_dfs.html",
+    "href": "reference/iapt_classes.Trial.step3_waiting_dfs.html",
+    "title": "step3_waiting_dfs",
+    "section": "",
+    "text": "step3_waiting_dfs\nTrial.step3_waiting_dfs"
+  },
+  {
+    "objectID": "reference/iapt_classes.g.html",
+    "href": "reference/iapt_classes.g.html",
+    "title": "iapt_classes.g",
+    "section": "",
+    "text": "g()\n\n\n\n\n\nName\nDescription\n\n\n\n\nasst_6_weeks\n\n\n\nbase_waiting_list\n\n\n\nbreak_time\n\n\n\ncaseload_weekly_stats\n\n\n\ncbt_avail\n\n\n\ncbt_caseload\n\n\n\ncbt_id\n\n\n\ncbt_resource\n\n\n\ncouns_avail\n\n\n\ncouns_caseload\n\n\n\ncouns_id\n\n\n\ncouns_resource\n\n\n\ncounsellors_huddle\n\n\n\ncpd_time\n\n\n\ndebug_level\n\n\n\ndna_policy\n\n\n\ndna_policy_var\n\n\n\nevent_week_tracker\n\n\n\ngroup_resource\n\n\n\nhours_avail_cbt\n\n\n\nhours_avail_couns\n\n\n\nhours_avail_pwp\n\n\n\nmdt_freq\n\n\n\nmean_referrals_pw\n\n\n\nnumber_of_runs\n\n\n\nnumber_on_cbt_cl\n\n\n\nnumber_on_cbt_wl\n\n\n\nnumber_on_couns_cl\n\n\n\nnumber_on_couns_wl\n\n\n\nnumber_on_group_cl\n\n\n\nnumber_on_group_wl\n\n\n\nnumber_on_pwp_cl\n\n\n\nnumber_on_pwp_wl\n\n\n\nnumber_on_ta_wl\n\n\n\nnumber_staff_cbt\n\n\n\nnumber_staff_couns\n\n\n\nnumber_staff_pwp\n\n\n\nopt_in_qtime\n\n\n\nopt_in_rate\n\n\n\nopt_in_wait\n\n\n\npwp_avail\n\n\n\npwp_caseload\n\n\n\npwp_id\n\n\n\npwp_resource\n\n\n\nreferral_rej_rate\n\n\n\nreferral_review_rate\n\n\n\nreferral_screen_time\n\n\n\nreview_rej_rate\n\n\n\nsim_duration\n\n\n\nstd_dev\n\n\n\nstep2_group_dna_rate\n\n\n\nstep2_group_session_mins\n\n\n\nstep2_group_sessions\n\n\n\nstep2_group_size\n\n\n\nstep2_path_ratios\n\n\n\nstep2_pwp_1st_mins\n\n\n\nstep2_pwp_dna_rate\n\n\n\nstep2_pwp_fup_mins\n\n\n\nstep2_pwp_period\n\n\n\nstep2_pwp_sessions\n\n\n\nstep2_ratio\n\n\n\nstep2_routes\n\n\n\nstep2_session_admin\n\n\n\nstep2_step3_ratio\n\n\n\nstep3_cbt_1st_mins\n\n\n\nstep3_cbt_dna_rate\n\n\n\nstep3_cbt_fup_mins\n\n\n\nstep3_cbt_period\n\n\n\nstep3_cbt_sessions\n\n\n\nstep3_couns_1st_mins\n\n\n\nstep3_couns_dna_rate\n\n\n\nstep3_couns_fup_mins\n\n\n\nstep3_couns_period\n\n\n\nstep3_couns_sessions\n\n\n\nstep3_path_ratios\n\n\n\nstep3_ratio\n\n\n\nstep3_routes\n\n\n\nstep3_session_admin\n\n\n\nstep_3_session_var\n\n\n\nstep_down_rate\n\n\n\nstep_routes\n\n\n\nstep_up_rate\n\n\n\nsupervision_time\n\n\n\nta_accept_rate\n\n\n\nta_resource\n\n\n\nta_time_mins\n\n\n\nweekly_wl_posn\n\n\n\nwellbeing_time",
+    "crumbs": [
+      "Set Up Options",
+      "iapt_classes.g"
+    ]
+  },
+  {
+    "objectID": "reference/iapt_classes.g.html#attributes",
+    "href": "reference/iapt_classes.g.html#attributes",
+    "title": "iapt_classes.g",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nasst_6_weeks\n\n\n\nbase_waiting_list\n\n\n\nbreak_time\n\n\n\ncaseload_weekly_stats\n\n\n\ncbt_avail\n\n\n\ncbt_caseload\n\n\n\ncbt_id\n\n\n\ncbt_resource\n\n\n\ncouns_avail\n\n\n\ncouns_caseload\n\n\n\ncouns_id\n\n\n\ncouns_resource\n\n\n\ncounsellors_huddle\n\n\n\ncpd_time\n\n\n\ndebug_level\n\n\n\ndna_policy\n\n\n\ndna_policy_var\n\n\n\nevent_week_tracker\n\n\n\ngroup_resource\n\n\n\nhours_avail_cbt\n\n\n\nhours_avail_couns\n\n\n\nhours_avail_pwp\n\n\n\nmdt_freq\n\n\n\nmean_referrals_pw\n\n\n\nnumber_of_runs\n\n\n\nnumber_on_cbt_cl\n\n\n\nnumber_on_cbt_wl\n\n\n\nnumber_on_couns_cl\n\n\n\nnumber_on_couns_wl\n\n\n\nnumber_on_group_cl\n\n\n\nnumber_on_group_wl\n\n\n\nnumber_on_pwp_cl\n\n\n\nnumber_on_pwp_wl\n\n\n\nnumber_on_ta_wl\n\n\n\nnumber_staff_cbt\n\n\n\nnumber_staff_couns\n\n\n\nnumber_staff_pwp\n\n\n\nopt_in_qtime\n\n\n\nopt_in_rate\n\n\n\nopt_in_wait\n\n\n\npwp_avail\n\n\n\npwp_caseload\n\n\n\npwp_id\n\n\n\npwp_resource\n\n\n\nreferral_rej_rate\n\n\n\nreferral_review_rate\n\n\n\nreferral_screen_time\n\n\n\nreview_rej_rate\n\n\n\nsim_duration\n\n\n\nstd_dev\n\n\n\nstep2_group_dna_rate\n\n\n\nstep2_group_session_mins\n\n\n\nstep2_group_sessions\n\n\n\nstep2_group_size\n\n\n\nstep2_path_ratios\n\n\n\nstep2_pwp_1st_mins\n\n\n\nstep2_pwp_dna_rate\n\n\n\nstep2_pwp_fup_mins\n\n\n\nstep2_pwp_period\n\n\n\nstep2_pwp_sessions\n\n\n\nstep2_ratio\n\n\n\nstep2_routes\n\n\n\nstep2_session_admin\n\n\n\nstep2_step3_ratio\n\n\n\nstep3_cbt_1st_mins\n\n\n\nstep3_cbt_dna_rate\n\n\n\nstep3_cbt_fup_mins\n\n\n\nstep3_cbt_period\n\n\n\nstep3_cbt_sessions\n\n\n\nstep3_couns_1st_mins\n\n\n\nstep3_couns_dna_rate\n\n\n\nstep3_couns_fup_mins\n\n\n\nstep3_couns_period\n\n\n\nstep3_couns_sessions\n\n\n\nstep3_path_ratios\n\n\n\nstep3_ratio\n\n\n\nstep3_routes\n\n\n\nstep3_session_admin\n\n\n\nstep_3_session_var\n\n\n\nstep_down_rate\n\n\n\nstep_routes\n\n\n\nstep_up_rate\n\n\n\nsupervision_time\n\n\n\nta_accept_rate\n\n\n\nta_resource\n\n\n\nta_time_mins\n\n\n\nweekly_wl_posn\n\n\n\nwellbeing_time",
+    "crumbs": [
+      "Set Up Options",
+      "iapt_classes.g"
+    ]
+  }
+]

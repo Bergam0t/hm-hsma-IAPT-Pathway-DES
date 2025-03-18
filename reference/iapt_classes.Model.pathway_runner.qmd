@@ -1,0 +1,6 @@
+# pathway_runner { #iapt_classes.Model.pathway_runner }
+
+```python
+Model.pathway_runner(patient, step_chosen)
+```
+

@@ -1,0 +1,6 @@
+# staff_entity_generator { #iapt_classes.Model.staff_entity_generator }
+
+```python
+Model.staff_entity_generator(week_number)
+```
+

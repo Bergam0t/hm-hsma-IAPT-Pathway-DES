@@ -1,0 +1,4 @@
+# step2_sessions_df { #iapt_classes.Model.step2_sessions_df }
+
+`Model.step2_sessions_df`
+

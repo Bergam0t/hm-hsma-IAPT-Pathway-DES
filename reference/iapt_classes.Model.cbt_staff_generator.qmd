@@ -1,0 +1,6 @@
+# cbt_staff_generator { #iapt_classes.Model.cbt_staff_generator }
+
+```python
+Model.cbt_staff_generator(week_number)
+```
+

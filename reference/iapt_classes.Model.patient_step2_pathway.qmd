@@ -1,0 +1,6 @@
+# patient_step2_pathway { #iapt_classes.Model.patient_step2_pathway }
+
+```python
+Model.patient_step2_pathway(patient)
+```
+

@@ -1,0 +1,73 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+
+# tell quarto to read the generated sidebar
+metadata-files:
+  - _sidebar.yml
+
+# tell quarto to read the generated styles
+# format:
+#   css:
+#     - _styles-quartodoc.css
+
+quartodoc:
+  # the name used to import the package you want to create reference docs for
+  package: null
+  source_dir: .streamlit
+
+  # write sidebar and style data
+  sidebar: _sidebar.yml
+  css: _styles-quartodoc.css
+
+  sections:
+    - title: Set Up Options
+
+      options:
+        children: embedded
+        include_empty: true
+
+      desc: Class controlling model-level parameters
+      contents:
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - iapt_classes.g
+
+    - title: Entities
+
+      options:
+        children: embedded
+        include_empty: true
+
+      desc: Entity-level
+      contents:
+        - iapt_classes.Staff
+        - iapt_classes.Patient
+
+    - title: Additional Functions
+
+      desc: Additional setup functions
+      contents:
+        - iapt_classes.vary_number_sessions
+
+
+    - title: IAPT Pathway Model
+      options:
+        children: separate
+        include_empty: true
+
+      desc: Class and methods controlling the flow of patients through the system
+      contents:
+        - iapt_classes.Model
+
+    - title: Trial Creation
+
+      options:
+        children: separate
+        include_empty: true
+
+      desc: Class and methods to run and analyse a trial consisting of multiple model runs
+      contents:
+        - iapt_classes.Trial

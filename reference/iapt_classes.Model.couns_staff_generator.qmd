@@ -1,0 +1,6 @@
+# couns_staff_generator { #iapt_classes.Model.couns_staff_generator }
+
+```python
+Model.couns_staff_generator(week_number)
+```
+

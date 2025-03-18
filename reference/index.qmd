@@ -1,0 +1,34 @@
+# Function reference {.doc .doc-index}
+
+## Set Up Options
+
+Class controlling model-level parameters
+
+| | |
+| --- | --- |
+| [iapt_classes.g](iapt_classes.g.qmd#iapt_classes.g) |  |
+
+## Entities
+
+Entity-level
+
+| | |
+| --- | --- |
+| [iapt_classes.Staff](iapt_classes.Staff.qmd#iapt_classes.Staff) |  |
+| [iapt_classes.Patient](iapt_classes.Patient.qmd#iapt_classes.Patient) |  |
+
+## IAPT Pathway Model
+
+Class and methods controlling the flow of patients through the system
+
+| | |
+| --- | --- |
+| [iapt_classes.Model](iapt_classes.Model.qmd#iapt_classes.Model) |  |
+
+## Trial Creation
+
+Class and methods to run and analyse a trial consisting of multiple model runs
+
+| | |
+| --- | --- |
+| [iapt_classes.Trial](iapt_classes.Trial.qmd#iapt_classes.Trial) |  |

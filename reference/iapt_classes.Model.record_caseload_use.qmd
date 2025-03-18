@@ -1,0 +1,6 @@
+# record_caseload_use { #iapt_classes.Model.record_caseload_use }
+
+```python
+Model.record_caseload_use(r_type, r_id, week_number)
+```
+

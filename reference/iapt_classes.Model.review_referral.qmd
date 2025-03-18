@@ -1,0 +1,6 @@
+# review_referral { #iapt_classes.Model.review_referral }
+
+```python
+Model.review_referral(patient)
+```
+

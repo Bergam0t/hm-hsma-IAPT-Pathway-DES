@@ -1,0 +1,6 @@
+# telephone_assessment { #iapt_classes.Model.telephone_assessment }
+
+```python
+Model.telephone_assessment(patient)
+```
+

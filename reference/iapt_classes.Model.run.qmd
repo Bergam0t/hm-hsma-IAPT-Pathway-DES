@@ -1,0 +1,6 @@
+# run { #iapt_classes.Model.run }
+
+```python
+Model.run(print_run_results=True)
+```
+

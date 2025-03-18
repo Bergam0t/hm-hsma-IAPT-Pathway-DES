@@ -1,0 +1,6 @@
+# screen_referral { #iapt_classes.Model.screen_referral }
+
+```python
+Model.screen_referral(asst_week_number)
+```
+

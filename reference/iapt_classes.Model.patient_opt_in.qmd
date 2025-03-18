@@ -1,0 +1,6 @@
+# patient_opt_in { #iapt_classes.Model.patient_opt_in }
+
+```python
+Model.patient_opt_in(patient)
+```
+
