@@ -1,0 +1,6 @@
+# step2_pwp_process { #iapt_classes_model.Model.step2_pwp_process }
+
+```python
+Model.step2_pwp_process(patient)
+```
+

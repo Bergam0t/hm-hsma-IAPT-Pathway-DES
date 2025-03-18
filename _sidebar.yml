@@ -3,17 +3,20 @@ website:
   - contents:
     - reference/index.qmd
     - contents:
-      - reference/iapt_classes.g.qmd
+      - reference/iapt_classes_global.g.qmd
       section: Set Up Options
     - contents:
-      - reference/iapt_classes.Staff.qmd
-      - reference/iapt_classes.Patient.qmd
+      - reference/iapt_classes_staff.Staff.qmd
+      - reference/iapt_classes_patient.Patient.qmd
       section: Entities
     - contents:
-      - reference/iapt_classes.Model.qmd
+      - reference/utils.vary_number_sessions.qmd
+      section: Additional Functions
+    - contents:
+      - reference/iapt_classes_model.Model.qmd
       section: IAPT Pathway Model
     - contents:
-      - reference/iapt_classes.Trial.qmd
+      - reference/iapt_classes_trial.Trial.qmd
       section: Trial Creation
     id: reference
   - id: dummy-sidebar

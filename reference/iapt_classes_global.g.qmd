@@ -1,0 +1,101 @@
+# iapt_classes_global.g { #iapt_classes_global.g }
+
+```python
+g()
+```
+
+
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [asst_6_weeks](#iapt_classes_global.g.asst_6_weeks) |  |
+| [base_waiting_list](#iapt_classes_global.g.base_waiting_list) |  |
+| [break_time](#iapt_classes_global.g.break_time) |  |
+| [caseload_weekly_stats](#iapt_classes_global.g.caseload_weekly_stats) |  |
+| [cbt_avail](#iapt_classes_global.g.cbt_avail) |  |
+| [cbt_caseload](#iapt_classes_global.g.cbt_caseload) |  |
+| [cbt_id](#iapt_classes_global.g.cbt_id) |  |
+| [cbt_resource](#iapt_classes_global.g.cbt_resource) |  |
+| [couns_avail](#iapt_classes_global.g.couns_avail) |  |
+| [couns_caseload](#iapt_classes_global.g.couns_caseload) |  |
+| [couns_id](#iapt_classes_global.g.couns_id) |  |
+| [couns_resource](#iapt_classes_global.g.couns_resource) |  |
+| [counsellors_huddle](#iapt_classes_global.g.counsellors_huddle) |  |
+| [cpd_time](#iapt_classes_global.g.cpd_time) |  |
+| [debug_level](#iapt_classes_global.g.debug_level) |  |
+| [dna_policy](#iapt_classes_global.g.dna_policy) |  |
+| [dna_policy_var](#iapt_classes_global.g.dna_policy_var) |  |
+| [event_week_tracker](#iapt_classes_global.g.event_week_tracker) |  |
+| [group_resource](#iapt_classes_global.g.group_resource) |  |
+| [hours_avail_cbt](#iapt_classes_global.g.hours_avail_cbt) |  |
+| [hours_avail_couns](#iapt_classes_global.g.hours_avail_couns) |  |
+| [hours_avail_pwp](#iapt_classes_global.g.hours_avail_pwp) |  |
+| [mdt_freq](#iapt_classes_global.g.mdt_freq) |  |
+| [mean_referrals_pw](#iapt_classes_global.g.mean_referrals_pw) |  |
+| [number_of_runs](#iapt_classes_global.g.number_of_runs) |  |
+| [number_on_cbt_cl](#iapt_classes_global.g.number_on_cbt_cl) |  |
+| [number_on_cbt_wl](#iapt_classes_global.g.number_on_cbt_wl) |  |
+| [number_on_couns_cl](#iapt_classes_global.g.number_on_couns_cl) |  |
+| [number_on_couns_wl](#iapt_classes_global.g.number_on_couns_wl) |  |
+| [number_on_group_cl](#iapt_classes_global.g.number_on_group_cl) |  |
+| [number_on_group_wl](#iapt_classes_global.g.number_on_group_wl) |  |
+| [number_on_pwp_cl](#iapt_classes_global.g.number_on_pwp_cl) |  |
+| [number_on_pwp_wl](#iapt_classes_global.g.number_on_pwp_wl) |  |
+| [number_on_ta_wl](#iapt_classes_global.g.number_on_ta_wl) |  |
+| [number_staff_cbt](#iapt_classes_global.g.number_staff_cbt) |  |
+| [number_staff_couns](#iapt_classes_global.g.number_staff_couns) |  |
+| [number_staff_pwp](#iapt_classes_global.g.number_staff_pwp) |  |
+| [opt_in_qtime](#iapt_classes_global.g.opt_in_qtime) |  |
+| [opt_in_rate](#iapt_classes_global.g.opt_in_rate) |  |
+| [opt_in_wait](#iapt_classes_global.g.opt_in_wait) |  |
+| [pwp_avail](#iapt_classes_global.g.pwp_avail) |  |
+| [pwp_caseload](#iapt_classes_global.g.pwp_caseload) |  |
+| [pwp_id](#iapt_classes_global.g.pwp_id) |  |
+| [pwp_resource](#iapt_classes_global.g.pwp_resource) |  |
+| [referral_rate_lookup](#iapt_classes_global.g.referral_rate_lookup) |  |
+| [referral_rej_rate](#iapt_classes_global.g.referral_rej_rate) |  |
+| [referral_review_rate](#iapt_classes_global.g.referral_review_rate) |  |
+| [referral_screen_time](#iapt_classes_global.g.referral_screen_time) |  |
+| [review_rej_rate](#iapt_classes_global.g.review_rej_rate) |  |
+| [sim_duration](#iapt_classes_global.g.sim_duration) |  |
+| [std_dev](#iapt_classes_global.g.std_dev) |  |
+| [step2_group_dna_rate](#iapt_classes_global.g.step2_group_dna_rate) |  |
+| [step2_group_session_mins](#iapt_classes_global.g.step2_group_session_mins) |  |
+| [step2_group_sessions](#iapt_classes_global.g.step2_group_sessions) |  |
+| [step2_group_size](#iapt_classes_global.g.step2_group_size) |  |
+| [step2_path_ratios](#iapt_classes_global.g.step2_path_ratios) |  |
+| [step2_pwp_1st_mins](#iapt_classes_global.g.step2_pwp_1st_mins) |  |
+| [step2_pwp_dna_rate](#iapt_classes_global.g.step2_pwp_dna_rate) |  |
+| [step2_pwp_fup_mins](#iapt_classes_global.g.step2_pwp_fup_mins) |  |
+| [step2_pwp_period](#iapt_classes_global.g.step2_pwp_period) |  |
+| [step2_pwp_sessions](#iapt_classes_global.g.step2_pwp_sessions) |  |
+| [step2_ratio](#iapt_classes_global.g.step2_ratio) |  |
+| [step2_routes](#iapt_classes_global.g.step2_routes) |  |
+| [step2_session_admin](#iapt_classes_global.g.step2_session_admin) |  |
+| [step2_step3_ratio](#iapt_classes_global.g.step2_step3_ratio) |  |
+| [step3_cbt_1st_mins](#iapt_classes_global.g.step3_cbt_1st_mins) |  |
+| [step3_cbt_dna_rate](#iapt_classes_global.g.step3_cbt_dna_rate) |  |
+| [step3_cbt_fup_mins](#iapt_classes_global.g.step3_cbt_fup_mins) |  |
+| [step3_cbt_period](#iapt_classes_global.g.step3_cbt_period) |  |
+| [step3_cbt_sessions](#iapt_classes_global.g.step3_cbt_sessions) |  |
+| [step3_couns_1st_mins](#iapt_classes_global.g.step3_couns_1st_mins) |  |
+| [step3_couns_dna_rate](#iapt_classes_global.g.step3_couns_dna_rate) |  |
+| [step3_couns_fup_mins](#iapt_classes_global.g.step3_couns_fup_mins) |  |
+| [step3_couns_period](#iapt_classes_global.g.step3_couns_period) |  |
+| [step3_couns_sessions](#iapt_classes_global.g.step3_couns_sessions) |  |
+| [step3_path_ratios](#iapt_classes_global.g.step3_path_ratios) |  |
+| [step3_ratio](#iapt_classes_global.g.step3_ratio) |  |
+| [step3_routes](#iapt_classes_global.g.step3_routes) |  |
+| [step3_session_admin](#iapt_classes_global.g.step3_session_admin) |  |
+| [step_3_session_var](#iapt_classes_global.g.step_3_session_var) |  |
+| [step_down_rate](#iapt_classes_global.g.step_down_rate) |  |
+| [step_routes](#iapt_classes_global.g.step_routes) |  |
+| [step_up_rate](#iapt_classes_global.g.step_up_rate) |  |
+| [supervision_time](#iapt_classes_global.g.supervision_time) |  |
+| [ta_accept_rate](#iapt_classes_global.g.ta_accept_rate) |  |
+| [ta_resource](#iapt_classes_global.g.ta_resource) |  |
+| [ta_time_mins](#iapt_classes_global.g.ta_time_mins) |  |
+| [weekly_wl_posn](#iapt_classes_global.g.weekly_wl_posn) |  |
+| [wellbeing_time](#iapt_classes_global.g.wellbeing_time) |  |

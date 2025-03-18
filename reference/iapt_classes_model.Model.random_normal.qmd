@@ -1,0 +1,6 @@
+# random_normal { #iapt_classes_model.Model.random_normal }
+
+```python
+Model.random_normal(mean, std_dev)
+```
+

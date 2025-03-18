@@ -1,0 +1,6 @@
+# weekly_stats { #iapt_classes_model.Model.weekly_stats }
+
+```python
+Model.weekly_stats(stats_week_number)
+```
+

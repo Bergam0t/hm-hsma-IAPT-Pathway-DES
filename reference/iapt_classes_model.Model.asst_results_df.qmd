@@ -1,0 +1,4 @@
+# asst_results_df { #iapt_classes_model.Model.asst_results_df }
+
+`Model.asst_results_df`
+

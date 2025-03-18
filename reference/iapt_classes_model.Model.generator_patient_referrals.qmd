@@ -1,0 +1,6 @@
+# generator_patient_referrals { #iapt_classes_model.Model.generator_patient_referrals }
+
+```python
+Model.generator_patient_referrals(ref_week_number)
+```
+

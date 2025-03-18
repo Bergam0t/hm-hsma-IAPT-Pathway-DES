@@ -1,0 +1,6 @@
+# utils.vary_number_sessions { #utils.vary_number_sessions }
+
+```python
+vary_number_sessions(lower, upper, lambda_val=0.1)
+```
+

@@ -1,0 +1,6 @@
+# step2_group_process { #iapt_classes_model.Model.step2_group_process }
+
+```python
+Model.step2_group_process(patient)
+```
+

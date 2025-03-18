@@ -1,0 +1,42 @@
+# iapt_classes_patient.Patient { #iapt_classes_patient.Patient }
+
+```python
+Patient(self, p_id)
+```
+
+
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [attended_ta](#iapt_classes_patient.Patient.attended_ta) |  |
+| [id](#iapt_classes_patient.Patient.id) |  |
+| [initial_step](#iapt_classes_patient.Patient.initial_step) |  |
+| [opt_in_qtime](#iapt_classes_patient.Patient.opt_in_qtime) |  |
+| [opt_in_wait](#iapt_classes_patient.Patient.opt_in_wait) |  |
+| [opted_in](#iapt_classes_patient.Patient.opted_in) |  |
+| [patient_at_risk](#iapt_classes_patient.Patient.patient_at_risk) |  |
+| [referral_rejected](#iapt_classes_patient.Patient.referral_rejected) |  |
+| [referral_req_review](#iapt_classes_patient.Patient.referral_req_review) |  |
+| [referral_review_rej](#iapt_classes_patient.Patient.referral_review_rej) |  |
+| [referral_time_screen](#iapt_classes_patient.Patient.referral_time_screen) |  |
+| [step2_drop_out](#iapt_classes_patient.Patient.step2_drop_out) |  |
+| [step2_end_week](#iapt_classes_patient.Patient.step2_end_week) |  |
+| [step2_path_route](#iapt_classes_patient.Patient.step2_path_route) |  |
+| [step2_place_on_wl](#iapt_classes_patient.Patient.step2_place_on_wl) |  |
+| [step2_resource_id](#iapt_classes_patient.Patient.step2_resource_id) |  |
+| [step2_session_count](#iapt_classes_patient.Patient.step2_session_count) |  |
+| [step2_start_week](#iapt_classes_patient.Patient.step2_start_week) |  |
+| [step2_wait_week](#iapt_classes_patient.Patient.step2_wait_week) |  |
+| [step2_week_number](#iapt_classes_patient.Patient.step2_week_number) |  |
+| [step3_drop_out](#iapt_classes_patient.Patient.step3_drop_out) |  |
+| [step3_end_week](#iapt_classes_patient.Patient.step3_end_week) |  |
+| [step3_path_route](#iapt_classes_patient.Patient.step3_path_route) |  |
+| [step3_place_on_wl](#iapt_classes_patient.Patient.step3_place_on_wl) |  |
+| [step3_resource_id](#iapt_classes_patient.Patient.step3_resource_id) |  |
+| [step3_session_count](#iapt_classes_patient.Patient.step3_session_count) |  |
+| [step3_start_week](#iapt_classes_patient.Patient.step3_start_week) |  |
+| [step3_week_number](#iapt_classes_patient.Patient.step3_week_number) |  |
+| [time_to_mdt](#iapt_classes_patient.Patient.time_to_mdt) |  |
+| [week_added](#iapt_classes_patient.Patient.week_added) |  |

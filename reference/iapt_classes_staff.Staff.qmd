@@ -1,0 +1,22 @@
+# iapt_classes_staff.Staff { #iapt_classes_staff.Staff }
+
+```python
+Staff(self, s_id)
+```
+
+
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [id](#iapt_classes_staff.Staff.id) |  |
+| [staff_band](#iapt_classes_staff.Staff.staff_band) |  |
+| [staff_hours_avail](#iapt_classes_staff.Staff.staff_hours_avail) |  |
+| [staff_time_breaks](#iapt_classes_staff.Staff.staff_time_breaks) |  |
+| [staff_time_cpd](#iapt_classes_staff.Staff.staff_time_cpd) |  |
+| [staff_time_huddle](#iapt_classes_staff.Staff.staff_time_huddle) |  |
+| [staff_time_superv](#iapt_classes_staff.Staff.staff_time_superv) |  |
+| [staff_time_wellbg](#iapt_classes_staff.Staff.staff_time_wellbg) |  |
+| [staff_type](#iapt_classes_staff.Staff.staff_type) |  |
+| [week_number](#iapt_classes_staff.Staff.week_number) |  |

@@ -1,0 +1,4 @@
+# df_trial_results { #iapt_classes_trial.Trial.df_trial_results }
+
+`Trial.df_trial_results`
+

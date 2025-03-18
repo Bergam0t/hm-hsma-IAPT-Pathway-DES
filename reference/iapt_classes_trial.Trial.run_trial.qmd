@@ -1,0 +1,6 @@
+# run_trial { #iapt_classes_trial.Trial.run_trial }
+
+```python
+Trial.run_trial()
+```
+

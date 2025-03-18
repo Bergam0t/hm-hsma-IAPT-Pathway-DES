@@ -1,0 +1,6 @@
+# pwp_staff_generator { #iapt_classes_model.Model.pwp_staff_generator }
+
+```python
+Model.pwp_staff_generator(week_number)
+```
+

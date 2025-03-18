@@ -1,0 +1,6 @@
+# find_caseload_slot { #iapt_classes_model.Model.find_caseload_slot }
+
+```python
+Model.find_caseload_slot(r_type)
+```
+

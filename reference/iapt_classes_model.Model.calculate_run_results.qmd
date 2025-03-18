@@ -1,0 +1,6 @@
+# calculate_run_results { #iapt_classes_model.Model.calculate_run_results }
+
+```python
+Model.calculate_run_results()
+```
+

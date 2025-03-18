@@ -1,0 +1,6 @@
+# step3_cbt_process { #iapt_classes_model.Model.step3_cbt_process }
+
+```python
+Model.step3_cbt_process(patient)
+```
+

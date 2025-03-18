@@ -1,0 +1,6 @@
+# resource_builder { #iapt_classes_model.Model.resource_builder }
+
+```python
+Model.resource_builder()
+```
+

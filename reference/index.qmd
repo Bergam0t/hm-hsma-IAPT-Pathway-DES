@@ -6,7 +6,7 @@ Class controlling model-level parameters
 
 | | |
 | --- | --- |
-| [iapt_classes.g](iapt_classes.g.qmd#iapt_classes.g) |  |
+| [iapt_classes_global.g](iapt_classes_global.g.qmd#iapt_classes_global.g) |  |
 
 ## Entities
 
@@ -14,8 +14,16 @@ Entity-level
 
 | | |
 | --- | --- |
-| [iapt_classes.Staff](iapt_classes.Staff.qmd#iapt_classes.Staff) |  |
-| [iapt_classes.Patient](iapt_classes.Patient.qmd#iapt_classes.Patient) |  |
+| [iapt_classes_staff.Staff](iapt_classes_staff.Staff.qmd#iapt_classes_staff.Staff) |  |
+| [iapt_classes_patient.Patient](iapt_classes_patient.Patient.qmd#iapt_classes_patient.Patient) |  |
+
+## Additional Functions
+
+Additional setup functions
+
+| | |
+| --- | --- |
+| [utils.vary_number_sessions](utils.vary_number_sessions.qmd#utils.vary_number_sessions) |  |
 
 ## IAPT Pathway Model
 
@@ -23,7 +31,7 @@ Class and methods controlling the flow of patients through the system
 
 | | |
 | --- | --- |
-| [iapt_classes.Model](iapt_classes.Model.qmd#iapt_classes.Model) |  |
+| [iapt_classes_model.Model](iapt_classes_model.Model.qmd#iapt_classes_model.Model) |  |
 
 ## Trial Creation
 
@@ -31,4 +39,4 @@ Class and methods to run and analyse a trial consisting of multiple model runs
 
 | | |
 | --- | --- |
-| [iapt_classes.Trial](iapt_classes.Trial.qmd#iapt_classes.Trial) |  |
+| [iapt_classes_trial.Trial](iapt_classes_trial.Trial.qmd#iapt_classes_trial.Trial) |  |

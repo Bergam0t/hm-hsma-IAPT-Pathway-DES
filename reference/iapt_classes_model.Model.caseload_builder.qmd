@@ -1,0 +1,6 @@
+# caseload_builder { #iapt_classes_model.Model.caseload_builder }
+
+```python
+Model.caseload_builder()
+```
+

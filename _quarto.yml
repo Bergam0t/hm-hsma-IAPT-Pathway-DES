@@ -16,7 +16,7 @@ metadata-files:
 quartodoc:
   # the name used to import the package you want to create reference docs for
   package: null
-  source_dir: .streamlit
+  source_dir: "."
 
   # write sidebar and style data
   sidebar: _sidebar.yml
@@ -33,7 +33,7 @@ quartodoc:
       contents:
         # the functions being documented in the package.
         # you can refer to anything: class methods, modules, etc..
-        - iapt_classes.g
+        - iapt_classes_global.g
 
     - title: Entities
 
@@ -43,14 +43,14 @@ quartodoc:
 
       desc: Entity-level
       contents:
-        - iapt_classes.Staff
-        - iapt_classes.Patient
+        - iapt_classes_staff.Staff
+        - iapt_classes_patient.Patient
 
     - title: Additional Functions
 
       desc: Additional setup functions
       contents:
-        - iapt_classes.vary_number_sessions
+        - utils.vary_number_sessions
 
 
     - title: IAPT Pathway Model
@@ -60,7 +60,7 @@ quartodoc:
 
       desc: Class and methods controlling the flow of patients through the system
       contents:
-        - iapt_classes.Model
+        - iapt_classes_model.Model
 
     - title: Trial Creation
 
@@ -70,4 +70,4 @@ quartodoc:
 
       desc: Class and methods to run and analyse a trial consisting of multiple model runs
       contents:
-        - iapt_classes.Trial
+        - iapt_classes_trial.Trial
